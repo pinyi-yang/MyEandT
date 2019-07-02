@@ -6,8 +6,8 @@ const passport      = require('./config/passportConfig');
 const flash         = require('connect-flash');
 const isLoggedIn    = require('./middleware/isloggedIn');
 const helmet        = require('helmet');
-// This is only used by session store
 const db            = require('./models');
+const moment        = require('moment');
 
 
 const app = express();
@@ -25,6 +25,10 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
+app.use(function(req, res, next) {
+  res.locals.moment = moment;
+  next();
+})
 app.use(helmet());
 app.use(session({
   secret: process.env.SESSION_SECRET,
@@ -57,7 +61,15 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
+app.get('/test', function(req, res){
+  db.user.findByPk(1).then(function(user) {
+    res.send(user);
+
+  })
+});
+
 app.use('/auth', require('./controllers/auth'));
+app.use('/dailyTasks', isLoggedIn, require('./controllers/dailyTasks.js'))
 
 var server = app.listen(process.env.PORT || 3000);
 
