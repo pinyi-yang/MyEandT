@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   drag.associate = function(models) {
     // associations can be defined here
-    models.drag.belongsToMany(models.dailtask, { through: dailtasksdrags })
+    models.drag.belongsToMany(models.dailytask, { through: 'dailytasksdrags' })
   };
   return drag;
 };

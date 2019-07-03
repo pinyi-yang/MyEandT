@@ -9,7 +9,7 @@ const Op       = sequelize.Op;
 
 // GET /dailytasks - render a page for today's tasks
 router.get('/', function(req, res) {
-  res.redirect('/dailytasks/'+ moment().format('YYYY-MM-DD'));
+  res.redirect('/dailytasks/date?date='+ moment().format('YYYY-MM-DD'));
 })
 
 // GET /dailytasks/new  -   render a page with form to create a new tasks.
@@ -17,9 +17,9 @@ router.get('/new', function(req, res) {
   res.render('dailytasks/new')
 })
 
-// GET /dailytasks/:date, (YYYY-MM-DD) - render a page for at the date
-router.get('/:date', function(req, res) {
-  let date = req.params.date;
+// GET /dailytasks/date, (YYYY-MM-DD) - render a page for at the date
+router.get('/date', function(req, res) {
+  let date = req.query.date;
   let id = req.user.id;
   let startDate = moment(date, 'YYYY-MM-DD').startOf('day');
   let endDate = moment(date, 'YYYY-MM-DD').endOf('day');
@@ -36,7 +36,7 @@ router.get('/:date', function(req, res) {
       }
     }
   }).then(function(tasks) {
-    res.render('dailytasks/index', {tasks});
+    res.render('dailytasks/index', {tasks, date});
   })
 });
 

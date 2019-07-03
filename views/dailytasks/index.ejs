@@ -1,5 +1,18 @@
-<h3>Hi! <%= currentUser.name%>. Here are you tasks today!</h3>
+<br>
+<%=date%>, <%=moment().format('YYYY-MM-DD')%>
+<% if (date == moment().format('YYYY-MM-DD')) { %>
+  <h3>Hi! <%= currentUser.name%>. Here are you tasks today!</h3>
+<%} else {%>
+  <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
+<%}%>
+
+  
+
 <hr>
+<form action="/dailytasks/date" method="GET">
+  <input type="date" name="date" id="" value='<%=date%>'>
+  <input type="submit" value="Go">
+</form>
 
 <div class="" id="dailytasks">
   <% tasks.forEach(function(task){ %>
