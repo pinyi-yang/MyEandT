@@ -24,7 +24,6 @@ router.get('/:date', function(req, res) {
   let startDate = moment(date, 'YYYY-MM-DD').startOf('day');
   let endDate = moment(date, 'YYYY-MM-DD').endOf('day');
   console.log(`${date}T23:59:999Z` + '🍅🍅🍅'+ startDate + ', ' + endDate);
-  
   // res.send(new Date(startDate));
   db.dailytask.findAll({
     where: {
@@ -37,9 +36,15 @@ router.get('/:date', function(req, res) {
       }
     }
   }).then(function(tasks) {
-    res.send(tasks);
+    res.render('dailytasks/index', {tasks});
   })
+});
+
+// GET /dailytasks/:taskid/edit - page allow all info of a task
+router.get('/dailytasks/:taskid/edit', function(req, res) {
+  db.dailytask.findOne()
 })
+
 
 // POST /dailytasks - add the new task to the database
 router.post('/', function(req, res) {

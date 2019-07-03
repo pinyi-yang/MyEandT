@@ -1,0 +1,23 @@
+<h3>Hi, <%=currentUser.name%>. Let's get on a new task!</h3>
+
+<form action="/dailytasks" method="POST">
+  Summary: <br>
+  <input type="text" name='summary' placeholder='Task Summary'><br><br>
+
+  Type: <br>
+  <input type="text" name='type' placeholder='Task Type'><br><br>
+
+  Start: <br>
+  <input type="date" name="startdate" id="" value="<%=moment().format('YYYY-MM-DD')%>"><br>
+  <input type="time" name="starttime" id="" step='60' value="<%=moment().format('HH:MM')%>"><br><br>
+
+  End: <br>
+  <input type="date" name="enddate" id="" value="<%=moment().format('YYYY-MM-DD')%>"><br>
+  <input type="time" name="endtime" id="" step='60' value="<%=moment().add(1, 'hour').format('HH:MM')%>"><br><br>
+
+  Description: <br>
+  <textarea name="description" id="" cols="30" rows="10" placeholder = 'Task Details'></textarea>
+
+  <input type="submit" value="CREATE">
+
+</form>

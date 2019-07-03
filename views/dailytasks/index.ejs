@@ -1,0 +1,11 @@
+<h3>Hi! <%= currentUser.name%>. Here are you tasks today!</h3>
+<hr>
+
+<div class="" id="dailytasks">
+  <% tasks.forEach(function(task){ %>
+    <p>
+      <h4><a href="/dailytasks/<%=task.id%>/edit"><%=task.summary%></a></h4>
+    </p>
+    <p><%=task.summary%></p>
+  <%})%>
+</div>

@@ -8,6 +8,7 @@ const isLoggedIn    = require('./middleware/isloggedIn');
 const helmet        = require('helmet');
 const db            = require('./models');
 const moment        = require('moment');
+const override      = require('method-override');
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
+app.use(override("_method"));
 app.use(function(req, res, next) {
   res.locals.moment = moment;
   next();
