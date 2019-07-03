@@ -17,7 +17,16 @@ header {
   padding: 0 0.5vw;
 }
 
+.container {
+  min-height: 90vh;
+}
 
+#hiddenfooter {
+  opacity: 0;
+  width: 100%;
+  padding: 0.5vw, 0.3vw;
+  display: flex;
+}
 footer {
   position: fixed;
   width: 100%;

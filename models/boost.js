@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   boost.associate = function(models) {
     // associations can be defined here
-    models.boost.belongsToMany(models.dailytask, { through: 'dailytasksboosts'});
+    models.boost.belongsToMany(models.dailytask, { through: 'dailytasksBoosts'});
   };
   return boost;
 };

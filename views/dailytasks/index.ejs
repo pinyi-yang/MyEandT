@@ -17,7 +17,7 @@
 <div class="" id="dailytasks">
   <% tasks.forEach(function(task){ %>
     <p>
-      <h4><a href="/dailytasks/<%=task.id%>/edit"><%=task.summary%></a></h4>
+      <h4><a href="/dailytasks/<%=task.id%>/edit"><%=task.summary%></a> <small>start at: <%=moment(task.start).format('HH:MM')%></small></h4> 
     </p>
     <p><%=task.summary%></p>
   <%})%>

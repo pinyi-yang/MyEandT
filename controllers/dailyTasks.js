@@ -34,15 +34,25 @@ router.get('/date', function(req, res) {
           [Op.gt]: new Date(startDate)
         }
       }
-    }
+    },
+    order: [
+      ['start', 'ASC']
+    ]
   }).then(function(tasks) {
     res.render('dailytasks/index', {tasks, date});
   })
 });
 
 // GET /dailytasks/:taskid/edit - page allow all info of a task
-router.get('/dailytasks/:taskid/edit', function(req, res) {
-  db.dailytask.findOne()
+router.get('/:taskid/edit', function(req, res) {
+  let id = parseInt(req.params.taskid);
+  db.dailytask.findOne({
+    where: {'id': id },
+    include: [db.drag, db.boost]
+    
+  }).then(function(task) {
+    res.render('dailytasks/edit', {task})
+  })
 })
 
 
@@ -57,11 +67,33 @@ router.post('/', function(req, res) {
     userId: req.user.id
   }
   db.dailytask.create(pendingTask).then(function(response) {
-    res.send('new tasks created', pendingTask.start, pendingTask.end);
+    res.redirect('/dailytasks/date?date=' + moment(req.body.start).format('YYYY-MM-DD'));
   }).catch(function(error) {
     res.send('get an error', error.message);
   })
+});
+
+// PUT /dailytasks/:taskid - update the task info and boosts and tags
+router.put('/:taskid', function(req, res) {
+  db.dailytask.update(
+    { 
+      summary: req.body.summary,
+      description: req.body.description,
+      type: req.body.type,
+      start: toDBDateTime(req.body.startdate, req.body.starttime),
+      "end": toDBDateTime(req.body.enddate, req.body.endtime),
+      efficiency: parseInt(req.body.efficiency),
+      notes: req.body.notes
+
+    },
+    {  where: {id: parseInt(req.params.taskid)}}
+  ).then(function(reseponse){
+    res.redirect('/dailytasks/date?date=' + moment(req.body.start).format('YYYY-MM-DD'));
+  });
 })
+
+
+
 
 //* date is in form of YYYY-MM-DD, time in HH:MM
 function toDBDateTime(date, time) {

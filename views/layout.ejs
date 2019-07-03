@@ -13,14 +13,14 @@
     <header>
     <div id="headerdate">
       <% var day = moment();%>
-      <h3>
+      <h5>
         Week <%=moment().week()%>, <%= moment().format('dddd')%>, <%=moment().format('ll')%>,<%= moment()%>, Timezone <%=moment().format('Z')%>
-      </h3>
+      </h5>
 
     </div>
 
     <nav>
-      <h3>
+      <h5>
       <a href="/">Home</a> |
       <%if (currentUser) { %>
         <a href="/auth/logout">Logout</a> |
@@ -29,7 +29,7 @@
         <a href="/auth/signup">Signup</a> |
         <a href="/auth/login">Login</a>
       <%}%>
-      </h3>
+      </h5>
     </nav>
     </header>
 
@@ -41,6 +41,15 @@
     </div>
 
 
+    <div id="hiddenfooter">
+      <div class="tablink">
+        <a href="/dailytasks">Today</a>
+      </div>
+      <div class="tablink">
+        <a href="/summary">Summary</a>
+      </div>
+      <div class="tablink"></div>
+    </div>
     <footer>
       <div class="tablink">
         <a href="/dailytasks">Today</a>
