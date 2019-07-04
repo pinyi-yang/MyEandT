@@ -17,7 +17,10 @@
 </div>
 
 <div id="tasktrackercontainer" class="">
-  <h4>Tracking <%=selectTask.summary%> (<%=selectTask.type%>)<small><a href="/dailytasks/<%=selectTask.id%>/edit">edit</a></small></h4> 
+  <h4>Tracking <%=selectTask.summary%> (<%=selectTask.type%>)
+    <small><a href="/dailytasks/<%=selectTask.id%>/edit">edit</a></small>
+    <small><a href="/dailytasks/date?date=<%=date%>">close tracker</a></small>
+  </h4> 
   <div id="tasktracker">
     <div id="trackerdecription">
       <b>Description:</b>

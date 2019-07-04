@@ -78,7 +78,17 @@ router.get('/:id', function(req,  res) {
   });
 
 })
-  
+
+// DELETE /dailytasks/:taskid - delete a task
+router.delete('/:taskid', function(req, res) {
+  db.dailytask.destroy({
+    where: { id: parseInt(req.params.taskid) }
+  }).then(function(reseponse) {
+    res.redirect('/dailytasks/date?date=' + req.body.date);
+  })
+})
+
+
 // GET /dailytasks/:taskid/efficiency?value="
 router.get('/:taskid/efficiency', function(req, res) {
   let taskid = parseInt(req.params.taskid);
@@ -119,7 +129,7 @@ router.post('/', function(req, res) {
     userId: req.user.id
   }
   db.dailytask.create(pendingTask).then(function(response) {
-    res.redirect('/dailytasks/date?date=' + req.body.startDate);
+    res.redirect('/dailytasks/date?date=' + req.body.startdate);
   }).catch(function(error) {
     res.send('get an error', error.message);
   })

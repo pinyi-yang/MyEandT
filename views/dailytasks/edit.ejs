@@ -1,4 +1,10 @@
-<h3>Edit: <%=task.summary%></h3>
+<h3>Edit: <%=task.summary%> </h3>
+
+<form action="/dailytasks/<%=task.id%>/?_method=DELETE" method="POST">
+  <input type="text" hidden name='date' value='<%=moment(task.start).format('YYYY-MM-DD')%>'>
+  <input type="submit" value="Delete">
+</form>
+
 <a href="/dailytasks/date?date=<%=moment(task.start).format('YYYY-MM-DD')%>">&larr; Back</a>
 
 
