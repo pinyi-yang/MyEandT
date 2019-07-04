@@ -1,25 +1,11 @@
-
-google.charts.load('current', {'packages':['corechart']});
-let piechart = {
-  title: 'test pie chart',
-  columename: ['Topping', 'Slices'],
-  columetype: ['string', 'number'],
-  date: [
-    ['Mushrooms', 1],
-    ['Onions', 1],
-    ['Olives', 2],
-    ['Zucchini', 2],
-    ['Pepperoni', 1]
-  ],
-  div: 'chart1'
-}
+google.charts.setOnLoadCallback(drawPieChart);
 
 function drawPieChart() {
   var data = new google.visualization.DataTable();
   for (let i = 0; i < piechart.columename.length; i ++) {
-    data.addColumn(piechart.columetype, piechart.columename);
+    data.addColumn(piechart.columetype[i], piechart.columename[i]);
   }
-  data.addRow(piechart.data);
+  data.addRows(piechart.data);
   var options = {
     title: piechart.title,
     width: 400,
@@ -28,4 +14,3 @@ function drawPieChart() {
   var chart = new google.visualization.PieChart(document.getElementById(piechart.div));
   chart.draw(data, options);
 }
-google.charts.setOnLoadCallback(drawPieChart);

@@ -16,6 +16,24 @@ router.get('/bytime', function(req, res) {
   res.render('summaries/bytime')
 })
 
+// GET /summaries/bytime/results?startdate=&enddate= show results for 
+router.get('/bytime/results', function(req, res) {
+  let startdate = moment(req.query.startdate, 'YYYY-MM-DD').startOf('day');
+  let enddate = moment(req.query.enddate, 'YYYY-MM-DD').endOf('day');
+  db.dailytask.findAll({
+    where: {
+      userId: req.user.id,
+      [Op.and]: {
+        start: {
+          [Op.lt]: new Date(enddate),
+          [Op.gt]: new Date(startdate)
+        }
+      }
+    }
+  }).then(function(tasks) {
+    res.render('summaries/bytimeshow', {tasks, startdate, enddate});
+  })
+})
 
 
 module.exports = router;

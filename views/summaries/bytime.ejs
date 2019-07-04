@@ -1,14 +1,6 @@
 <% include ../partials/summariesheadtabs%>
+<% include ../partials/summariesdaterange%>
 
-<div id="summarydate">
-  <form action="/summaries/bytime/results" method="get">
-    <b>From: </b>
-    <input type="date" required name='startdate' value='<%=moment().format('YYYY-MM-DD')%>'>
-    <b> to: </b>
-    <input type="date" required name='enddate' value='<%=moment().format('YYYY-MM-DD')%>'>
-    <input type="submit" value="Show">
-  </form>
-</div>
 
 <div id="summarycharts">
   <table class="columns">
@@ -20,43 +12,3 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-      // Load Charts and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Draw the pie chart for Sarah's pizza when Charts is loaded.
-      google.charts.setOnLoadCallback(drawPieChart);
-
-
-      let piechart = {
-  title: 'test pie chart',
-  columename: ['Topping', 'Slices'],
-  columetype: ['string', 'number'],
-  data: [
-    ['Mushrooms', 1],
-    ['Onions', 1],
-    ['Olives', 2],
-    ['Zucchini', 2],
-    ['Pepperoni', 1]
-  ],
-  div: 'chart1'
-}
-
-function drawPieChart() {
-  var data = new google.visualization.DataTable();
-  for (let i = 0; i < piechart.columename.length; i ++) {
-    data.addColumn(piechart.columetype[i], piechart.columename[i]);
-  }
-  data.addRows(piechart.data);
-  var options = {
-    title: piechart.title,
-    width: 400,
-    height:300
-  };
-  var chart = new google.visualization.PieChart(document.getElementById(piechart.div));
-  chart.draw(data, options);
-}
-
-</script>

@@ -1,0 +1,57 @@
+<% include ../partials/summariesheadtabs%>
+<% include ../partials/summariesdaterange%>
+
+<div id="summarymessage">
+<h4>
+  Summaries for tasks between <%=moment(startdate).format('dddd, MMM Do YYYY')%> and <%=moment(enddate).format('dddd, MMM Do YYYY')%>
+</h4>
+</div>
+
+<div id="summarycharts">
+  <table class="columns">
+      <tr>
+        <td><div id="chart1" style="border: 1px solid #ccc"></div></td>
+        <td><div id="chart2" style="border: 1px solid #ccc"></div></td>
+        <td><div id="chart3" style="border: 1px solid #ccc"></div></td>
+      </tr>
+      <tr>
+        <td><div id="chart4" style="border: 1px solid #ccc"></div></td>
+        <td><div id="chart5" style="border: 1px solid #ccc"></div></td>
+        <td><div id="chart6" style="border: 1px solid #ccc"></div></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<p hidden id='tasksJSON'>
+  <%= JSON.stringify(tasks);%>
+</p>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    let tasks =JSON.parse(document.getElementById('tasksJSON').textContent);
+    console.log(tasks[0].type);
+    // Load Charts and the corechart package.
+    google.charts.load('current', {'packages':['corechart']});
+
+    let tasks = <%=tasks%>;
+    console.log(tasks[0].type);
+    let piechart = {
+      title: 'Hours by task types',
+      columename: ['Task', 'Hours'],
+      columetype: ['string', 'number'],
+      data: [],
+      div: 'chart1'
+    };
+    let temp = {}
+    tasks.foEach(function(task) {
+      if (temp[task.type]) {
+        temp[task.type][1] += <%=moment(task.start).diff(moment(task.end), 'hours')%>;
+      } else {
+        temp[task.type] = [task.type, <%=moment(task.start).diff(moment(task.end), 'hours')%>]
+      }
+    });
+    for (let item in temp) {
+      piechart.data.push(item);
+    }
+</script>
+<%include ./functions/drawPieChart%>

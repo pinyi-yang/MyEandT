@@ -1,0 +1,9 @@
+<div id="summarydate">
+  <form action="/summaries/bytime/results" method="get">
+    <b>From: </b>
+    <input type="date" required name='startdate' value='<%=typeof startdate!='undefined'? moment(startdate).format('YYYY-MM-DD'):moment().format('YYYY-MM-DD')%>'>
+    <b> to: </b>
+    <input type="date" required name='enddate' value='<%=typeof enddate!='undefined'? moment(enddate).format('YYYY-MM-DD'):moment().format('YYYY-MM-DD')%>'>
+    <input type="submit" value="Show">
+  </form>
+</div>
