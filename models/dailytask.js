@@ -41,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     models.dailytask.belongsTo(models.user);
     models.dailytask.belongsToMany(models.drag, {through: 'dailytasksDrags'});
     models.dailytask.belongsToMany(models.boost, {through: 'dailytasksBoosts'});
+    models.dailytask.belongsToMany(models.lift, {through: 'dailytasksLifts'});
   };
   return dailytask;
 };

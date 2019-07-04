@@ -1,0 +1,38 @@
+<% if (date == moment().format('YYYY-MM-DD')) { %>
+  <h3>Hi! <%= currentUser.name%>. Here are you tasks today!</h3>
+<%} else {%>
+  <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
+<%}%>
+<form action="/dailytasks/date" method="GET">
+  <input type="date" name="date" id="" value='<%=date%>'>
+  <input type="submit" value="Go">
+</form>
+<a href="/dailytasks/new?date=<%=date%>">add a new task</a>
+<div class="" id="dailytasks">
+  <% tasks.forEach(function(task){ %>
+    <p>
+      <h4><a href="/dailytasks/<%=task.id%>"><%=task.summary%></a>  (<%=task.type%>) <small>start at: <%=moment(task.start).format('HH:MM')%> <a href="/dailytasks/<%=task.id%>/edit">edit</a></small></h4> 
+    </p>
+  <%})%>
+</div>
+
+<div id="tasktrackercontainer" class="">
+  <h4>Tracking <%=selectTask.summary%> (<%=selectTask.type%>)<small><a href="/dailytasks/<%=selectTask.id%>/edit">edit</a></small></h4> 
+  <div id="tasktracker">
+    <div id="trackerdecription">
+      <b>Description:</b>
+      <p><%=selectTask.description%></p>  
+    </div>
+
+    <div id="efficiency">
+      <% include ../partials/efficiency%>
+    </div>
+
+
+    
+    <div id="dragboost">
+      <% include ../partials/drags%>
+      <% include ../partials/boosts%>
+    </div>
+  </div>
+</div>

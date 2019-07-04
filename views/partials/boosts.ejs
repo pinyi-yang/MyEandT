@@ -1,0 +1,13 @@
+<div id="boostscontainer">
+  <form action="/boosts" method="POST">
+    <b>Boosts:</b>         
+    <input hidden type="text" name='taskid' value="<%=selectTask.id%>">
+    <input type="text" name='boost'> 
+    <input type="submit" value="add">  
+  </form>
+  <div id="boost">
+    <%selectTask.boosts.forEach(function(boost){%>
+      <a href="/boosts/remove?boostid=<%=boost.id%>&taskid=<%=selectTask.id%>"><%=boost.name%></a> | 
+    <%})%>
+  </div>
+</div>

@@ -14,7 +14,8 @@ router.get('/', function(req, res) {
 
 // GET /dailytasks/new  -   render a page with form to create a new tasks.
 router.get('/new', function(req, res) {
-  res.render('dailytasks/new')
+  let date = req.query.date
+  res.render('dailytasks/new', {date})
 })
 
 // GET /dailytasks/date, (YYYY-MM-DD) - render a page for at the date
@@ -42,6 +43,57 @@ router.get('/date', function(req, res) {
     res.render('dailytasks/index', {tasks, date});
   })
 });
+
+// GET /dailytasks/:id
+router.get('/:id', function(req,  res) {
+  let taskId = parseInt(req.params.id);
+  db.dailytask.findOne({
+    where: {id : taskId},
+    include: [db.boost, db.drag]
+  }).then(function(selectTask) {
+    // console.log('😓😓😓',taskId);
+    // res.send(selectTask);
+    let date = moment(selectTask.start).format('YYYY-MM-DD');
+    let id = req.user.id;
+    let startDate = moment(date, 'YYYY-MM-DD').startOf('day');
+    let endDate = moment(date, 'YYYY-MM-DD').endOf('day');
+    console.log(`${date}T23:59:999Z` + '🍅🍅🍅'+ startDate + ', ' + endDate);
+    // res.send(new Date(startDate));
+    db.dailytask.findAll({
+      where: {
+        userId: id,
+        [Op.and]: {
+          start:{
+            [Op.lt]: new Date(endDate),
+            [Op.gt]: new Date(startDate)
+          }
+        }
+      },
+      order: [
+        ['start', 'ASC']
+      ]
+    }).then(function(tasks) {
+      res.render('dailytasks/show', {tasks, date, selectTask});
+    })
+  });
+
+})
+  
+// GET /dailytasks/:taskid/efficiency?value="
+router.get('/:taskid/efficiency', function(req, res) {
+  let taskid = parseInt(req.params.taskid);
+  let effValue = parseInt(req.query.value);
+  db.dailytask.update({
+    efficiency: effValue
+  },
+  {
+    where: {id: taskid}
+  }).then(function(response){
+    res.redirect('/dailytasks/' + taskid);
+  })
+})
+
+
 
 // GET /dailytasks/:taskid/edit - page allow all info of a task
 router.get('/:taskid/edit', function(req, res) {

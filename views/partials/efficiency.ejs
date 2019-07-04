@@ -1,0 +1,11 @@
+Efficiency: 
+    <%for (let i = 1; i <=5; i++) {%>
+      <%if (i <= selectTask.efficiency){%>
+        <a href="/dailytasks/<%=selectTask.id%>/efficiency?value=<%=i%>">⭐️</a>
+      <%} else {%>
+         <a href="/dailytasks/<%=selectTask.id%>/efficiency?value=<%=i%>">☆</a>
+      <%}%>
+      
+    <%}%>  
+    
+  </form>

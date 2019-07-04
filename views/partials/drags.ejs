@@ -1,0 +1,13 @@
+<div id="dragcontainer">
+  <form action="/drags" method="POST">
+    <b>Drags:</b>         
+    <input hidden type="text" name='taskid' value="<%=selectTask.id%>">
+    <input type="text" name='drag'> 
+    <input type="submit" value="add">  
+  </form>
+  <div id="drag">
+    <%selectTask.drags.forEach(function(drag){%>
+      <a href="/drags/remove?dragid=<%=drag.id%>&taskid=<%=selectTask.id%>"><%=drag.name%></a> | 
+    <%})%>
+  </div>
+</div>

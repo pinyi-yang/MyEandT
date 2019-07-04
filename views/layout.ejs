@@ -14,7 +14,7 @@
     <div id="headerdate">
       <% var day = moment();%>
       <h5>
-        Week <%=moment().week()%>, <%= moment().format('dddd')%>, <%=moment().format('ll')%>,<%= moment()%>, Timezone <%=moment().format('Z')%>
+        Week <%=moment().week()%>, <%= moment().format('dddd')%>, <%=moment().format('ll')%>
       </h5>
 
     </div>
@@ -35,7 +35,7 @@
 
     <div class="container">
       <h1>myE&T</h1>
-      <%- JSON.stringify(currentUser) %>
+      <% JSON.stringify(currentUser) %>
       <% include partials/alerts %>
       <%- body %>
     </div>
