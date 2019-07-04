@@ -119,7 +119,7 @@ router.post('/', function(req, res) {
     userId: req.user.id
   }
   db.dailytask.create(pendingTask).then(function(response) {
-    res.redirect('/dailytasks/date?date=' + moment(req.body.start).format('YYYY-MM-DD'));
+    res.redirect('/dailytasks/date?date=' + req.body.startDate);
   }).catch(function(error) {
     res.send('get an error', error.message);
   })
