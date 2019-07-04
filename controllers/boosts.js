@@ -6,6 +6,7 @@ const moment   = require('moment');
 const sequelize = require('sequelize');
 const async = require('async');
 const Op       = sequelize.Op;
+const DELAY    = 300;
 
 // GET /boosts/remove?boostid=&taskid= query - remove a boost from select project
 router.get('/remove', function(req, res) {
@@ -14,7 +15,7 @@ router.get('/remove', function(req, res) {
   db.boost.destroy({
     where: {id: boostid}
   }).then(function(response) {
-    res.redirect('/dailytasks/' + taskid);
+    setTimeout(function(){res.redirect('/dailytasks/' + taskid)}, DELAY);
   })
 });
 
@@ -28,7 +29,7 @@ router.post('/', function(req, res) {
   }).then(function(dailytask) {
     let inputs = genAddBoostFns(boostnames, dailytask);
     async.parallel(inputs, function(error, results) {
-      res.redirect('/dailytasks/' + taskId);
+      setTimeout(function() {res.redirect('/dailytasks/' + taskId)}, DELAY);
     })
   })
 })

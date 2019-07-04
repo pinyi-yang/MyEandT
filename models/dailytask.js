@@ -30,9 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     hooks: {
       beforeCreate: function(pendingtask, options) {
-        let type = pendingtask.type;
-        type = type.charAt(0) + type.slice(1);
-        pendingtask.type = type;
+        pendingtask.type = pendingtask.type.toLowerCase();
       }
     }
   });

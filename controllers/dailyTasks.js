@@ -150,7 +150,7 @@ router.put('/:taskid', function(req, res) {
     },
     {  where: {id: parseInt(req.params.taskid)}}
   ).then(function(reseponse){
-    res.redirect('/dailytasks/date?date=' + moment(req.body.start).format('YYYY-MM-DD'));
+    res.redirect('/dailytasks/date?date=' + moment(req.body.startdate).format('YYYY-MM-DD'));
   });
 })
 

@@ -4,8 +4,9 @@ const router   = express.Router();
 const db       = require('../models');
 const moment   = require('moment');
 const sequelize = require('sequelize');
-const async = require('async');
+const async    = require('async');
 const Op       = sequelize.Op;
+const DELAY    = 300;  
 
 // GET /drags/remove?dragid=&taskid= query - remove a drag from select project
 router.get('/remove', function(req, res) {
@@ -14,7 +15,7 @@ router.get('/remove', function(req, res) {
   db.drag.destroy({
     where: {id: dragid}
   }).then(function(response) {
-    res.redirect('/dailytasks/' + taskid);
+    setTimeout(function() {res.redirect('/dailytasks/' + taskid)}, DELAY);
   })
 })
 
@@ -27,7 +28,7 @@ router.post('/', function(req, res) {
   }).then(function(dailytask) {
     let inputs = genAddDragFns(dragnames, dailytask);
     async.parallel(inputs, function(error, results) {
-      res.redirect('/dailytasks/' + taskId);
+      setTimeout(function() {res.redirect('/dailytasks/' + taskId)}, DELAY);
     })
   })
 })

@@ -10,7 +10,7 @@
 
 <form action="/dailytasks/<%=task.id%>/?_method=PUT" method="POST">
   Summary: <br>
-  <input type="text" name='summary' value='<%=task.summary%>'><br><br>
+  <input required type="text" name='summary' value='<%=task.summary%>' ><br><br>
 
   Type: <br>
   <input type="text" name='type' value='<%=task.type%>'><br><br>
@@ -30,11 +30,11 @@
 
 
   Start: <br>
-  <input type="date" name="startdate" id="" value="<%=moment(task.start).format('YYYY-MM-DD')%>"><br>
+  <input required type="date" name="startdate" id="" value="<%=moment(task.start).format('YYYY-MM-DD')%>"><br>
   <input type="time" name="starttime" id="" step='60' value="<%=moment(task.start).format('HH:MM')%>"><br><br>
 
   End: <br>
-  <input type="date" name="enddate" id="" value="<%=moment(task.end).format('YYYY-MM-DD')%>"><br>
+  <input required type="date" name="enddate" id="" value="<%=moment(task.end).format('YYYY-MM-DD')%>"><br>
   <input type="time" name="endtime" id="" step='60' value="<%=moment(task.end).format('HH:MM')%>"><br><br>
 
   Description: <br>
@@ -42,21 +42,6 @@
 
   Notes: <br>
   <textarea name="notes" id="" cols="30" rows="10"><%=task.notes%></textarea><br><br>
-
-  Boosts: <br>
-  <select name="boost" id="">
-    <%task.boosts.forEach(function(boost) { %>
-      <option value="<%=boost.name%>"><%=boost.name%></option> 
-    <%})%>
-  </select>
-  <br><br>
-
-  Drags: <br>
-  <select name="drag" id="">
-    <%task.drags.forEach(function(drag) { %>
-      <option value="<%=drag.name%>"><%=drag.name%></option> 
-    <%})%>
-  </select><br><br>
 
   <input type="submit" value="Submit">
 

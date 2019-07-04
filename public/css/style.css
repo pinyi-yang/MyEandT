@@ -19,6 +19,7 @@ header {
 
 .container {
   min-height: 90vh;
+  padding-bottom: 3vh;
 }
 
 #hiddenfooter {

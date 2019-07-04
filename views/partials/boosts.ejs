@@ -2,7 +2,7 @@
   <form action="/boosts" method="POST">
     <b>Boosts:</b>         
     <input hidden type="text" name='taskid' value="<%=selectTask.id%>">
-    <input type="text" name='boost'> 
+    <input type="text" name='boost' required> 
     <input type="submit" value="add">  
   </form>
   <div id="boost">
