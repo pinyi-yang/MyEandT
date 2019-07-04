@@ -71,10 +71,10 @@ app.get('/test', function(req, res){
 });
 
 app.use('/auth', require('./controllers/auth'));
-app.use('/dailyTasks', isLoggedIn, require('./controllers/dailyTasks.js'))
-app.use('/boosts', isLoggedIn, require('./controllers/boosts.js'))
-app.use('/drags', isLoggedIn, require('./controllers/drags.js'))
-
+app.use('/dailyTasks', isLoggedIn, require('./controllers/dailyTasks.js'));
+app.use('/boosts', isLoggedIn, require('./controllers/boosts.js'));
+app.use('/drags', isLoggedIn, require('./controllers/drags.js'));
+app.use('/summaries', isLoggedIn, require('./controllers/summaries.js'));
 
 var server = app.listen(process.env.PORT || 3000);
 

@@ -31,11 +31,11 @@
 
   Start: <br>
   <input required type="date" name="startdate" id="" value="<%=moment(task.start).format('YYYY-MM-DD')%>"><br>
-  <input type="time" name="starttime" id="" step='60' value="<%=moment(task.start).format('HH:MM')%>"><br><br>
+  <input type="time" name="starttime" id="" step='60' value="<%=moment(task.start).format('HH:mm')%>"><br><br>
 
   End: <br>
   <input required type="date" name="enddate" id="" value="<%=moment(task.end).format('YYYY-MM-DD')%>"><br>
-  <input type="time" name="endtime" id="" step='60' value="<%=moment(task.end).format('HH:MM')%>"><br><br>
+  <input type="time" name="endtime" id="" step='60' value="<%=moment(task.end).format('HH:mm')%>"><br><br>
 
   Description: <br>
   <textarea name="description" id="" cols="30" rows="10" placeholder = 'Task Details'><%=task.description%></textarea><br><br>

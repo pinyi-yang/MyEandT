@@ -37,27 +37,26 @@
       <h1>myE&T</h1>
       <% JSON.stringify(currentUser) %>
       <% include partials/alerts %>
-      <%- body %>
+      
+      <main>
+        <%- body %>
+      </main>
+      <div class="tablinkcontainer">
+        <div class="tablink">
+          <a href="/dailytasks">Today</a>
+        </div>
+        <div class="tablink">
+          <a href="/summaries">Summaries</a>
+        </div>
+      </div>
     </div>
 
 
     <div id="hiddenfooter">
-      <div class="tablink">
-        <a href="/dailytasks">Today</a>
-      </div>
-      <div class="tablink">
-        <a href="/summary">Summary</a>
-      </div>
-      <div class="tablink"></div>
     </div>
     <footer>
-      <div class="tablink">
-        <a href="/dailytasks">Today</a>
+      <div id="copyright">
       </div>
-      <div class="tablink">
-        <a href="/summary">Summary</a>
-      </div>
-      <div class="tablink"></div>
     </footer>
 
     <script src="//code.jquery.com/jquery.js"></script>

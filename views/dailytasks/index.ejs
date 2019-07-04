@@ -13,7 +13,7 @@
 <div class="" id="dailytasks">
   <% tasks.forEach(function(task){ %>
     <p>
-      <h4><a href="/dailytasks/<%=task.id%>"><%=task.summary%></a> (<%=task.type%>) <small><%=moment(task.start).format('HH:MM')%>~<%=moment(task.end).format('HH:MM')%> <a href="/dailytasks/<%=task.id%>/edit">edit</a></small></h4>
+      <h4><a href="/dailytasks/<%=task.id%>"><%=task.summary%></a> (<%=task.type%>) <small><%=moment(task.start).format('HH:mm')%>~<%=moment(task.end).format('HH:mm')%> <a href="/dailytasks/<%=task.id%>/edit">edit</a></small></h4>
       
     </p>
   <%})%>

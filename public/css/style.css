@@ -16,24 +16,29 @@ header {
   justify-content: space-between;
   padding: 0 0.5vw;
 }
-
-.container {
-  min-height: 90vh;
+main {
+  height: 79vh;
+  overflow: scroll;
   padding-bottom: 3vh;
 }
 
-#hiddenfooter {
-  opacity: 0;
-  width: 100%;
-  padding: 0.5vw, 0.3vw;
+
+.tablinkcontainer {
   display: flex;
 }
+
+#hiddenfooter {
+  /* opacity: 0;
+  width: 100%;
+  padding: 0.5vw, 0.3vw;
+  display: flex; */
+}
 footer {
-  position: fixed;
+  /* position: fixed;
   width: 100%;
   bottom: 0;
   left: 0;
   padding: 0.5vw, 0.3vw;
-  display: flex;
+  display: flex; */
 }
 
