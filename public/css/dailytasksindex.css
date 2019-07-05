@@ -1,0 +1,21 @@
+.subcontainer {
+  display: flex;
+}
+
+#weektasks {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(7, 1fr)
+}
+
+#weektasks div {
+  text-align: center;
+}
+
+#weektasks a {
+  display: block;
+}
+
+#habit {
+  width: 20%;
+}

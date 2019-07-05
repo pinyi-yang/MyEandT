@@ -5,11 +5,19 @@
 <%}%>
 
 <div class="subcontainer">
+  <div id="weektasks">
   
+  </div>
+  <div id="habit">
+    <div id="habittitle">
+      Habits:
+    </div>
+    water: 💧 💧 💧 💧 💧 
+  </div>
 </div>
 
 <form action="/dailytasks/date" method="GET">
-  <input type="date" name="date" id="" value='<%=date%>'>
+  <input type="date" name="date" id="selectdate" value='<%=date%>'>
   <input type="submit" value="Go">
 </form>
 <a href="/dailytasks/new?date=<%=date%>">add a new task</a>
@@ -24,7 +32,9 @@
 </div>
 
 <p hidden id='tasksJSON'>
-  <%= JSON.stringify(tasks);%>
+  <%= JSON.stringify(weekTasks);%>
 </p>
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 <script src="/js/dailytasksindex.js"></script>
+<link rel="stylesheet" href="/css/dailytasksindex.css">
