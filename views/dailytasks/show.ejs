@@ -3,6 +3,8 @@
 <%} else {%>
   <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
 <%}%>
+
+
 <form action="/dailytasks/date" method="GET">
   <input type="date" name="date" id="" value='<%=date%>'>
   <input type="submit" value="Go">
@@ -47,3 +49,5 @@
 
   </div>
 </div>
+
+<script src="/js/dailytasksshow.js"></script>

@@ -4,6 +4,10 @@
   <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
 <%}%>
 
+<div class="subcontainer">
+  
+</div>
+
 <form action="/dailytasks/date" method="GET">
   <input type="date" name="date" id="" value='<%=date%>'>
   <input type="submit" value="Go">
@@ -18,3 +22,9 @@
     </p>
   <%})%>
 </div>
+
+<p hidden id='tasksJSON'>
+  <%= JSON.stringify(tasks);%>
+</p>
+
+<script src="/js/dailytasksindex.js"></script>
