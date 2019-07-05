@@ -29,7 +29,8 @@ router.get('/bytime/results', function(req, res) {
           [Op.gt]: new Date(startdate)
         }
       }
-    }
+    },
+    include: [db.boost, db.drag]
   }).then(function(tasks) {
     res.render('summaries/bytimeshow', {tasks, startdate, enddate});
   })

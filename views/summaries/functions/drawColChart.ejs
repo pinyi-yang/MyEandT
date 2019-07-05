@@ -1,0 +1,17 @@
+<%# <script> %>
+
+  google.charts.setOnLoadCallback(drawColChart);
+
+  function drawColChart() {
+    var data = new google.visualization.DataTable();
+    //*add columens
+    for (let i = 0; i < colChart.columename.length; i ++) {
+      data.addColumn(colChart.columetype[i], colChart.columename[i]);
+    }
+    data.addRows(colChart.data);
+    var options = colChart.options;
+    var chart = new google.visualization.ColumnChart(document.getElementById(colChart.div));
+    chart.draw(data, options);
+  }
+
+<%# </script> %>

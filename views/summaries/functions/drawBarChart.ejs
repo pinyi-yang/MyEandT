@@ -1,0 +1,14 @@
+<%# <script> %>
+  google.charts.setOnLoadCallback(drawBarChart);
+
+  function drawBarChart() {
+    var data = new google.visualization.DataTable();
+    for (let i = 0; i < barchart.columename.length; i ++) {
+      data.addColumn(barchart.columetype[i], barchart.columename[i]);
+    }
+    data.addRows(barchart.data);
+    var options = barchart.options;
+  var chart = new google.visualization.BarChart(document.getElementById(barchart.div));
+  chart.draw(data, options);
+  }
+<%# </script> %>
