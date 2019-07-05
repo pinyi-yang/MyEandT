@@ -4,22 +4,23 @@
   <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
 <%}%>
 
+<form action="/dailytasks/date" method="GET">
+  <input type="date" name="date" id="selectdate" value='<%=date%>'>
+  <input type="submit" value="Go">
+</form>
+
 <div class="subcontainer">
-  <div id="weektasks">
-  
-  </div>
+  <div id="weektasks"></div>
   <div id="habit">
     <div id="habittitle">
       Habits:
     </div>
     water: 💧 💧 💧 💧 💧 
   </div>
+  
 </div>
 
-<form action="/dailytasks/date" method="GET">
-  <input type="date" name="date" id="selectdate" value='<%=date%>'>
-  <input type="submit" value="Go">
-</form>
+
 <a href="/dailytasks/new?date=<%=date%>">add a new task</a>
 
 <div class="" id="dailytasks">

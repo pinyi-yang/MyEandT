@@ -9,11 +9,15 @@
 }
 
 #weektasks div {
+
+}
+#weektasks div a:first-child {
   text-align: center;
 }
 
 #weektasks a {
   display: block;
+  padding: 0.3%;
 }
 
 #habit {
