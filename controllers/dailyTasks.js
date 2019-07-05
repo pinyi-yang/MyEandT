@@ -77,7 +77,19 @@ router.get('/:id', function(req,  res) {
     })
   });
 
-})
+});
+
+// GET /dailytasks/addnotes?notes= update notes for tasks
+router.get('/:taskid/addnotes', function(req, res) {
+  db.dailytask.update({
+    notes: req.query.notes
+  },
+  {
+    where: {id:parseInt(req.params.taskid)}
+  }).then(function(reseponse) {
+    res.redirect('/dailytasks/' + req.params.taskid)
+  })
+});
 
 // DELETE /dailytasks/:taskid - delete a task
 router.delete('/:taskid', function(req, res) {

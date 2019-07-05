@@ -30,12 +30,20 @@
     <div id="efficiency">
       <% include ../partials/efficiency%>
     </div>
-
-
-    
     <div id="dragboost">
       <% include ../partials/drags%>
       <% include ../partials/boosts%>
     </div>
+
+    <div>
+    <b>Notes:</b>
+    <form action="/dailytasks/<%=selectTask.id%>/addnotes" method="GET">
+      <textarea name="notes" id="" cols="30" rows="10"><%=selectTask.notes%></textarea>
+      <br>
+      <input type="submit" value="SAVE">
+    </form>
+
+    </div>
+
   </div>
 </div>
