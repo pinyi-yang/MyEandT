@@ -56,8 +56,17 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', function(req, res) {
-  res.render('index');
+  if (req.user) {
+    res.redirect('/home');
+  } else {
+    res.render('index', {layout: 'indexlayout'});
+  }
 });
+
+app.get('/home', function(req, res) {
+  res.render('home');
+})
+
 
 app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');

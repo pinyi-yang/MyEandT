@@ -1,3 +1,17 @@
-<h2>Home</h2>
+  <header>
+    <div id="headerdate">
+      <% var day = moment();%>
+      <h4>
+      MyE&T, 
+        Week <%=moment().week()%>, <%= moment().format('dddd')%>, <%=moment().format('ll')%>
+      </h4>
 
+    </div>
+  </header>
 
+  <div class="container">
+    <div id="hiddenfooter"></div>
+  </div>
+  <footer>
+    <div id="copyright"></div>
+  </footer>
