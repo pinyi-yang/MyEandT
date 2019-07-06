@@ -17,23 +17,33 @@
     </div>
     water: 💧 💧 💧 💧 💧 
   </div>
-  
+</div>
+
+<div class="subcontainer">
+  <div id="daytasks">
+    <div id="daytaskshead">
+      <%for (let i = 8; i<=22; i++){%>
+        <div><%=i%>:00</div>
+      <%}%>
+    </div>
+    <div id="daytaskslist">
+      <%for (let i = 0; i<=15; i++){%>
+        <div></div>
+      <%}%>
+    </div>
+  </div>
 </div>
 
 
 <a href="/dailytasks/new?date=<%=date%>">add a new task</a>
 
-<div class="" id="dailytasks">
-  <% tasks.forEach(function(task){ %>
-    <p>
-      <h4><a href="/dailytasks/<%=task.id%>"><%=task.summary%></a> (<%=task.type%>) <small><%=moment(task.start).format('HH:mm')%>~<%=moment(task.end).format('HH:mm')%> <a href="/dailytasks/<%=task.id%>/edit">edit</a></small></h4>
-      
-    </p>
-  <%})%>
-</div>
 
 <p hidden id='tasksJSON'>
   <%= JSON.stringify(weekTasks);%>
+</p>
+
+<p hidden id='daytasksJSON'>
+  <%= JSON.stringify(tasks);%>
 </p>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>

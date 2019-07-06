@@ -90,7 +90,24 @@ router.get('/:id', function(req,  res) {
         ['start', 'ASC']
       ]
     }).then(function(tasks) {
-      res.render('dailytasks/show', {tasks, date, selectTask});
+      let startWeek= moment(date, 'YYYY-MM-DD').startOf('week');
+      let endWeek = moment(date, 'YYYY-MM-DD').endOf('week');
+      db.dailytask.findAll({
+        where: {
+          userId: id,
+          [Op.and]: {
+            start:{
+              [Op.lt]: new Date(endWeek),
+              [Op.gt]: new Date(startWeek)
+            }
+          }
+        },
+        order: [
+          ['start', 'ASC']
+        ]
+      }).then(function(weekTasks) {
+        res.render('dailytasks/show', {weekTasks, tasks, date, selectTask});
+      })    
     })
   });
 

@@ -13,6 +13,7 @@
 }
 #weektasks div a:first-child {
   text-align: center;
+  font-weight: bold;
 }
 
 #weektasks a {
@@ -22,4 +23,29 @@
 
 #habit {
   width: 20%;
+}
+
+#daytasks {
+  width: 150%;
+  overflow: scroll;
+}
+
+#daytaskshead {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(15, 10%);
+  font-weight: bold;
+}
+
+#daytaskslist {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5% repeat(14, 10%) 5%;
+}
+#daytaskslist div {
+  min-height: 11vh;
+}
+
+.daytask {
+  position: absolute;
 }
