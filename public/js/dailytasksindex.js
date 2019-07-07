@@ -56,8 +56,8 @@ tasks.forEach(function(task) {
   let startpos = moment(start.format('H:mm'), 'H:mm').diff(moment('7:30', 'H:mm;'), 'minutes');
   let width = moment(end).diff(start, 'minutes');
   // console.log(start.format('H:mm') + "'s start pos is " + startpos);
-  startpos = startpos/9 + '%';
-  width = width/9 + '%';
+  startpos = startpos/6 + '%';
+  width = width/6 + '%';
   // console.log(startpos, width);
 
   linkEl.style.left = startpos;

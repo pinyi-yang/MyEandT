@@ -7,7 +7,7 @@
   </form>
   <div id="boost">
     <%selectTask.boosts.forEach(function(boost){%>
-      <a href="/boosts/remove?boostid=<%=boost.id%>&taskid=<%=selectTask.id%>"><%=boost.name%></a> | 
+      <a href="/boosts/remove?boostid=<%=boost.id%>&taskid=<%=selectTask.id%>" class='trackertabs boosttabs'><%=boost.name%></a> 
     <%})%>
   </div>
 </div>

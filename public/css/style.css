@@ -17,17 +17,32 @@ a {
 }
 
 input {
-  font-size: 1.2vw;
+  font-size: 1.1vw;
   border-radius: 3px;
+  padding: 0.2vh 0.2vw;
   border: none;
+  margin-top: 0.2vh;
 }
 
+input[type=date] {
+  width: 7.5vw;
+}
 input[type=date]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   display: none;
 }
 
 input[type=date]::-webkit-clear-button {
+  display: none; /* Hide the button */
+  -webkit-appearance: none; /* turn off default browser styling */
+}
+
+input[type=time]::-webkit-clear-button {
+  display: none; /* Hide the button */
+  -webkit-appearance: none; /* turn off default browser styling */
+}
+
+input[type=time]::-webkit-inner-spin-button {
   display: none; /* Hide the button */
   -webkit-appearance: none; /* turn off default browser styling */
 }
@@ -124,7 +139,30 @@ header a:hover {
 
 .lighttab:hover {
   background: rgba(245, 245, 245, 0.603);
-} 
+}
+
+.trackertabs {
+  margin-top: 0.5vh;
+  display: inline-block;
+  padding: 0.3vw 0.8vw;
+  font-size: 1vw;
+  color: white;
+  border-radius: 0.9vw;
+}
+
+.trackertabs:hover {
+  background: rgb(230, 230, 230);
+  text-decoration: line-through;
+  color: black;
+}
+
+.dragtabs {
+  background:#dc3911;
+}
+
+.boosttabs {
+  background:#f89901;
+}
 
 main {
   /* height: 89vh;
@@ -159,6 +197,7 @@ main {
   vertical-align: middle;
   border-radius: 2px;
   justify-content: center;
+  background: white;
 }
 
 .btn:hover {

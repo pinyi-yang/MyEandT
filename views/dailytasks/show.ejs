@@ -12,7 +12,7 @@
   </div>
 
 <form action="/dailytasks/date" method="GET">
-  <input type="date" name="date" id="selectdate" value='<%=date%>'>
+  <input type="date" name="date" id="selectdate" value='<%=date%>' class='dateinput'>
   <input type="submit" value="Go">
 </form>
   
@@ -38,45 +38,60 @@
 
 <div class="subcontainer">
   <div id="daytasks">
-    <div id="daytaskshead">
-      <%for (let i = 8; i<=22; i++){%>
-        <div><%=i%>:00</div>
+  
+    <div id="daytaskslist">
+      <%for (let i = 0; i<=29; i++){%>
+        <div class='dailytasksgrid'></div>
       <%}%>
     </div>
-    <div id="daytaskslist">
-      <%for (let i = 0; i<=15; i++){%>
-        <div></div>
+
+      <div id="daytaskshead">
+      <%for (let i = 8; i<=22; i++){%>
+        <div><%=i%>:00</div>
       <%}%>
     </div>
   </div>
 </div>
 
 <div id="tasktrackercontainer" class="">
-  <h4>Tracking <%=selectTask.summary%> (<%=selectTask.type%>)
-    <small><a href="/dailytasks/<%=selectTask.id%>/edit">edit</a></small>
-    <small><a href="/dailytasks/date?date=<%=date%>">close tracker</a></small>
-  </h4> 
+  <b>Tracking <%=selectTask.summary%> (<%=selectTask.type%>)</b> 
+  <small><a href="/dailytasks/<%=selectTask.id%>/edit" class='btnlink btn'>edit</a></small>
+  <small><a href="/dailytasks/date?date=<%=date%>" class='btnlink btn'>close tracker</a></small>
+   
   <div id="tasktracker">
     <div id="trackerdecription">
-      <b>Description:</b>
-      <p><%=selectTask.description%></p>  
+      <div>
+        <b>Description:</b>
+      </div>
+      <div>
+        <% if (selectTask.description) {%>
+          <%=selectTask.description%>  
+        <% } else {%>
+          No description yet.
+        <%}%>
+      </div>
     </div>
 
-    <div id="efficiency">
-      <% include ../partials/efficiency%>
-    </div>
-    <div id="dragboost">
-      <% include ../partials/drags%>
-      <% include ../partials/boosts%>
-    </div>
+    <div id="trackersnotes">
+      <div id="trackers">
+        <div id="efficiency">
+          <% include ../partials/efficiency%>
+        </div>
 
-    <div>
-    <b>Notes:</b>
-    <form action="/dailytasks/<%=selectTask.id%>/addnotes" method="GET">
-      <textarea name="notes" id="" cols="30" rows="10"><%=selectTask.notes%></textarea>
-      <br>
-      <input type="submit" value="SAVE">
-    </form>
+        <% include ../partials/drags%>
+        <% include ../partials/boosts%>      
+      </div>
+
+
+      <div id ='notes'>
+        <form action="/dailytasks/<%=selectTask.id%>/addnotes" method="GET">
+          Notes: &nbsp
+          <small><input type="submit" value="SAVE" class='btn btnlink' style='font-size: 11px;'></small>
+          <textarea name="notes" id="" cols="30" rows="10"><%=selectTask.notes%></textarea>
+          <br>
+          
+        </form>
+      </div>
 
     </div>
 
@@ -91,6 +106,13 @@
   <%= JSON.stringify(tasks);%>
 </p>
 
+<p hidden id='selectTaskId'>
+  <%=selectTask.id%>
+</p>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 <script src="/js/dailytasksindex.js"></script>
+<script>
+  document.getElement
+</script>
 <link rel="stylesheet" href="/css/dailytasksindex.css">

@@ -38,21 +38,22 @@
 
 <div class="subcontainer">
   <div id="daytasks">
+    
+    <div id="daytaskslist">
+      <%for (let i = 0; i<=29; i++){%>
+        <div class='dailytasksgrid'></div>
+      <%}%>
+    </div>
     <div id="daytaskshead">
       <%for (let i = 8; i<=22; i++){%>
         <div><%=i%>:00</div>
-      <%}%>
-    </div>
-    <div id="daytaskslist">
-      <%for (let i = 0; i<=29; i++){%>
-        <div></div>
       <%}%>
     </div>
   </div>
 </div>
 
 
-<a href="/dailytasks/new?date=<%=date%>">add a new task</a>
+<a href="/dailytasks/new?date=<%=date%>" class='btnlink btn'>add a new task</a>
 
 
 <p hidden id='tasksJSON'>

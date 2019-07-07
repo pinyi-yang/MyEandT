@@ -36,12 +36,17 @@ h3 {
 
 
 #weektasks {
+  min-height: 25vh;
   display: grid;
   width: 85%;
   grid-template-columns: repeat(7, 1fr);
   
 }
 
+#currentdate {
+  background: rgba(240, 240, 240, 0.753);
+  border-radius: 5px;
+}
 #weektasks div {
 }
 #weektasks div a:first-child {
@@ -58,12 +63,16 @@ h3 {
 }
 
 #daytasks {
-  min-height: 18.5vh;
+  min-height: 16vh;
   width: 150%;
   overflow-x: scroll;
-  border-top: rgba(179, 179, 179, 0.781) solid 2px;
+  /* border-top: rgba(179, 179, 179, 0.781) solid 2px; */
   border-bottom: rgba(179, 179, 179, 0.781) solid 2px;
+  margin-bottom: 3vh;
   scrollbar-width: thin;
+  transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg); /* IE 9 */
+  -webkit-transform:rotateX(180deg); /* Safari and Chrome */
 }
 
 #daytaskshead {
@@ -72,15 +81,21 @@ h3 {
   grid-template-columns: repeat(15, 10%);
   font-weight: bold;
   padding: 5px;
+  transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg); /* IE 9 */
+  -webkit-transform:rotateX(180deg); /* Safari and Chrome */
 }
 
 #daytaskslist {
   position: relative;
   display: grid;
   grid-template-columns: repeat(30, 5%);
+  transform:rotateX(180deg);
+  -ms-transform:rotateX(180deg); /* IE 9 */
+  -webkit-transform:rotateX(180deg); /* Safari and Chrome */
 }
-#daytaskslist div {
-  min-height: 11vh;
+.dailytasksgrid {
+  min-height: 10vh;
   border-right: rgba(179, 179, 179, 0.781) solid 1px;
 }
 
@@ -91,7 +106,42 @@ h3 {
 }
 
 .daytask div {
+  min-height: 8vh;
   padding: 0.3vw;
   border-radius: 5px;
-  vertical-align: middle;
+}
+
+.btnlink {
+  display: inline-block;
+  padding: 5px;
+}
+
+#tasktrackercontainer {
+  background: rgba(240, 240, 240, 0.753);
+  padding: 1vh 1vw;
+  border-radius: 5px;
+  /* border: black solid 1px; */
+}
+
+#trackerdecription {
+  border-bottom: black solid 1px;
+}
+
+#trackersnotes {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  margin-top: 1vh;
+
+}
+
+#trackers {
+  display: grid;
+  grid-template-rows: 0.5fr 1fr 1fr;
+}
+
+#notes textarea {
+  width: 90%;
+  margin: auto;
+  margin-top: 0.5vh;
+  margin-left: 2%;
 }
