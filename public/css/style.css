@@ -1,41 +1,135 @@
 html, body {
   margin: 0;
+  background: #f7d73a;
 }
 @font-face {
   font-family: 'dreamwood';
   src: url('Dreamwood.ttf');
 }
-
-.logo {
-  font-family: 'dreamwood';
-}
 * {
   font-family:'Roboto', sans-serif;
   /* border: black solid 1px; */
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+input {
+  font-size: 1.2vw;
+  border-radius: 3px;
+  border: none;
+}
+
+input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+input[type=date]::-webkit-clear-button {
+  display: none; /* Hide the button */
+  -webkit-appearance: none; /* turn off default browser styling */
+}
+
+input[type=submit] {
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=submit]:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
+              0px 1px 10px 0px rgba(0, 0, 0, .12);
+} 
+
+.dateinput {
+  width: 8vw;
+}
+
+.logo {
+  font-family: 'dreamwood';
+  font-size: 1.7vw;
+  font-style: italic;
+}
+
+header {
+  color: white;
+  background: rgba(49, 49, 49, 0.856);
+  margin-bottom: 1vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5vw;
+}
+
+header h4 {
+  margin: 1.4vh 0.5vw;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
 .container {
-  padding: 0 15px;
   margin: auto;
+  background: rgba(235, 235, 235, 0.76);
+  padding: 0.1vh 1vw;
+  border-radius: 0.7vw;
+  min-height: 91.5vh;
 }
 .tablink {
-  padding: 0.3vw;
-  background: lightgray;
+  padding: 0.2vw 0.3vw;
   font-weight: bold;
+  display: block;
+  border-radius: 5px 5px 0 0;
+}
+
+.tablink:hover {
+  background:rgba(245, 245, 245, 0.603);
+}
+
+.tabtask {
+  display: block;
+  border-radius: 3px;
+  background: rgb(148, 148, 148);
+  color: white;
+  padding: 0.3vw;
+  overflow: hidden;
+  margin: 1px 1px;
+  font-size: 14px;
+}
+
+.api {
+  background: #c0ca33;
+}
+.server {
+  background: #f09200; 
+}
+.frontend {
+  background: #329ae4;
+}
+.baby {
+  background: #ea9189
+}
+.design {
+  background: #7885cb;
+}
+.database {
+  background: #795548; 
 }
 
 .lighttab:hover {
   background: rgba(245, 245, 245, 0.603);
 } 
 
-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.5vw;
-}
 main {
-  height: 89vh;
+  /* height: 89vh;
   overflow: scroll;
-  padding-bottom: 3vh;
+  padding-bottom: 3vh; */
 }
 
 .form-group {
@@ -52,8 +146,25 @@ main {
   color: #555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
   border-radius: 4px;
+}
+.btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  border: none;
+  outline:none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 2px;
+  justify-content: center;
+}
+
+.btn:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
+              0px 1px 10px 0px rgba(0, 0, 0, .12);
 }
 
 .btn-primary {
@@ -78,6 +189,10 @@ main {
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
               0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
               0px 1px 10px 0px rgba(0, 0, 0, .12);
+}
+
+.dateinput {
+
 }
 
 .tablinkcontainer {

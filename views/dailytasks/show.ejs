@@ -4,19 +4,35 @@
   <h3>Hi! <%= currentUser.name%>. Here are you tasks on <%=moment(date, 'YYYY-MM-DD').format('dddd')%>, <%=moment(date, 'YYYY-MM-DD').format('LL')%>!</h3>
 <%}%>
 
+<div id="dateselectdiv">
+  <div class="arrow">
+    <a href="/dailytasks/date?date=<%=moment(date, 'YYYY-MM-DD').subtract(1, 'day').format('YYYY-MM-DD')%>">
+      <img src="/img/lastpage.png" alt="Last">
+    </a>
+  </div>
 
 <form action="/dailytasks/date" method="GET">
   <input type="date" name="date" id="selectdate" value='<%=date%>'>
   <input type="submit" value="Go">
 </form>
+  
+  <div class="arrow">
+    <a href="/dailytasks/date?date=<%=moment(date, 'YYYY-MM-DD').add(1, 'day').format('YYYY-MM-DD')%>">
+      <img src="/img/nextpage.png" alt="Next">
+    </a>
+  </div>
+
+</div>
 
 <div class="subcontainer">
+
   <div id="weektasks"></div>
+  
   <div id="habit">
     <div id="habittitle">
-      Habits:
+      <b>Habits:</b>
     </div>
-    water: 💧 💧 💧 💧 💧 
+    water: 💧💧💧💧💧 
   </div>
 </div>
 

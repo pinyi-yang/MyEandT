@@ -17,6 +17,7 @@ for (let i=0; i <=6; i++) {
   weekdaytasksElArr[i] =document.createElement('div');
   let link = document.createElement('a');
   let temp = moment(weekStart);
+  link.classList.add('tablink');
   link.href = "/dailytasks/date?date=" + temp.add(i, 'day').format('YYYY-MM-DD');
   console.log(weekStart.format('YYYY-MM-DD'));
   link.textContent = moment(i, 'd').format('ddd').toUpperCase();
@@ -30,6 +31,7 @@ weekTasks.forEach(function(task) {
   taskEl.href = '/dailytasks/' + task.id;
   taskEl.textContent = "• " + task.summary;
   taskEl.classList.add(task.type);
+  taskEl.classList.add('tabtask')
   weekdaytasksElArr[moment(task.start).format('d')].appendChild(taskEl);
 })
 
