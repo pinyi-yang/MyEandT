@@ -1,0 +1,89 @@
+body { 
+  position: relative;
+  background: #f7d73a;
+}
+
+h1 {
+  font-family: 'dreamwood';
+  font-size: 3.5vw;
+  font-style: italic;
+  color: #6860d7;
+}
+h4 {
+  margin-top: 1vh;
+}
+#appinfo {
+  position: absolute;
+  width: 35vw;
+  min-height: 56vh;
+  left: 8vw;
+  top: 18vh;
+  /* border: #2d2d2d solid 0.4vw; */
+  padding: 0 0.8vw 0.4vw 1vw;
+  border-radius: 1vw;
+  /* background: rgba(0, 0, 0, 0.705); */
+  /* color: white; */
+}
+
+#context {
+  width: 95%;
+  margin: auto;
+  text-align: justify;
+}
+.authdiv {
+  position: absolute;
+  width: 30vw;
+  height: 40vw;
+  right: 10vw;
+  top: 12vh;
+  /* border: black solid 2px; */
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.authdiv a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  font-size: 1.5vw
+}
+
+.authlinks {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px 10px 0 0;
+  border-bottom: rgba(230, 230, 230, 0.658) solid 3px;
+}
+
+.authlinks div {
+  width: 14.9vw;
+  text-align: center;
+  padding:1vw 0;
+}
+.authlinks a:first-child div {
+  border-right: rgba(230, 230, 230, 0.658) solid 3px;
+}
+
+form {
+  margin-top: 3.4vw;
+}
+
+.form-group {
+  padding: 0.8vw 0;
+}
+
+label {
+  font-size: 1.2vw;
+  font-weight: 1000;
+  line-height: 1.8vw;
+}
+
+#button {
+  /* border: black solid 2px; */
+  margin-top: 1.8vw;
+}
+
+#button div {
+  display: inline-block;
+  width: 70%;
+}

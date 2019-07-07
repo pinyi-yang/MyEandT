@@ -59,11 +59,11 @@ app.get('/', function(req, res) {
   if (req.user) {
     res.redirect('/home');
   } else {
-    res.render('index', {layout: 'indexlayout'});
+    res.redirect('auth/login');
   }
 });
 
-app.get('/home', function(req, res) {
+app.get('/home', isLoggedIn, function(req, res) {
   res.render('home');
 })
 

@@ -1,9 +1,17 @@
 html, body {
   margin: 0;
 }
+@font-face {
+  font-family: 'dreamwood';
+  src: url('Dreamwood.ttf');
+}
 
+.logo {
+  font-family: 'dreamwood';
+}
 * {
-  border: black solid 1px;
+  font-family:'Roboto', sans-serif;
+  /* border: black solid 1px; */
 }
 .container {
   padding: 0 15px;
@@ -14,6 +22,11 @@ html, body {
   background: lightgray;
   font-weight: bold;
 }
+
+.lighttab:hover {
+  background: rgba(245, 245, 245, 0.603);
+} 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -25,11 +38,15 @@ main {
   padding-bottom: 3vh;
 }
 
+.form-group {
+  width: 90%;
+  margin: 1.5vw auto;
+}
+
 .form-control {
   display: block;
-  width: 100%;
-  height: 34px;
-  padding: 6px 12px;
+  width: 90%;
+  padding: 0.5vw 1vw;
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
@@ -37,6 +54,30 @@ main {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.btn-primary {
+  font-size: 1.2vw;
+  font-weight: 500;
+  letter-spacing: 0.1vw;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 6vw;
+  height: 3vw;
+  border: none;
+  outline:none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14), 
+              0px 1px 10px 0px rgba(0, 0, 0, .12);
 }
 
 .tablinkcontainer {

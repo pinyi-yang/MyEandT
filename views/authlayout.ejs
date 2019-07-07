@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>myE&T</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/auth.css">
+  </head>
+  <body>
+    <header>
+      <div id="headerdate">
+        <% var day = moment();%>
+        <h4>
+        <span class='logo'>MyE&T</span>, Week <%=moment().week()%>, <%= moment().format('dddd')%>, <%=moment().format('ll')%>
+        </h4>
+
+      </div>
+    </header>
+    <%- body%>
+
+
+  </body>
+</html>

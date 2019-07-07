@@ -5,7 +5,7 @@ const db = require('../models');
 
 // GET /auth/signup - sends the signup form
 router.get('/signup', function(req, res) {
-  res.render('auth/signup');
+  res.render('auth/signup', {layout: 'authlayout'});
 });
 
 // POST /auth/signup - try to add a new user to db
@@ -37,12 +37,12 @@ router.post('/signup', function(req, res) {
 
 //GET /auth/login - sends the login form
 router.get('/login', function(req, res) {
-  res.render('auth/login');
+  res.render('auth/login', {layout: 'authlayout'});
 });
 
 // POST /auth/login - does the authentication
 router.post('/login', passport.authenticate('local', {
-  successRedirect:'/',
+  successRedirect:'/home',
   failureRedirect: '/auth/login',
   successFlash: 'You have logged in.',
   failureFlash: 'Invalide username and/or password.'
