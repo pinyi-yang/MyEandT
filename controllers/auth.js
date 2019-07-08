@@ -42,7 +42,7 @@ router.get('/login', function(req, res) {
 
 // POST /auth/login - does the authentication
 router.post('/login', passport.authenticate('local', {
-  successRedirect:'/home',
+  successRedirect:'../home',
   failureRedirect: '/auth/login',
   successFlash: 'You have logged in.',
   failureFlash: 'Invalide username and/or password.'

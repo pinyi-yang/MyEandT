@@ -58,11 +58,11 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', function(req, res) {
-  if (req.user) {
-    res.redirect('/home');
-  } else {
-    res.redirect('auth/login');
-  }
+  res.redirect('auth/login');
+  // if (req.user) {
+  //   res.redirect('/home');
+  // } else {
+  // }
 });
 
 app.get('/home', isLoggedIn, function(req, res) {
