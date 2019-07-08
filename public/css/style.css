@@ -74,6 +74,16 @@ input[type=submit]:hover {
   font-style: italic;
 }
 
+.alert {
+  text-align: center;
+}
+.alert-danger {
+  color: red;
+}
+.alert-success {
+  color: green;
+}
+
 header {
   color: white;
   background: rgba(49, 49, 49, 0.856);

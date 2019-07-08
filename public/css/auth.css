@@ -66,8 +66,11 @@ h4 {
   border-right: rgba(230, 230, 230, 0.658) solid 3px;
 } */
 
-form {
-  margin-top: 50px;
+.alert {
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 input {
