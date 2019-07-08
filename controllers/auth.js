@@ -43,10 +43,12 @@ router.get('/login', function(req, res) {
 // POST /auth/login - does the authentication
 router.post('/login', passport.authenticate('local', {
   failureRedirect: '/auth/login',
-  failureFlash: 'Invalide username and/or password.',
-  successRedirect:'/home',
-  // successFlash: 'You have logged in.'
-  })
+  failureFlash: 'Invalide username and/or password.'
+  }), function(req, res) {
+    req.session.save(function(err) {
+      res.redirect('/home');
+    })
+  }
 );
 
 // GET /auth/logout - deletes the session
@@ -54,7 +56,10 @@ router.get('/logout', function(req, res) {
   req.logout(); //* passport function to delete session.
   console.log('log out');
   req.flash('success', 'You have a logged out.')
-  res.redirect('/');
+  req.session.destroy(function(err) {
+
+    res.redirect('/');
+  })
 })
 
 
