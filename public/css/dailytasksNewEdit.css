@@ -1,0 +1,21 @@
+textarea {
+  min-width: 40%;
+  margin-top: 0.8vh;
+  font-size: 1vw;
+}
+
+input {
+  margin-top: 0.5vh;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.7vh;
+  margin-top: 1vh;
+}
+
+.btnlink {
+  display: inline-block;
+  padding: 5px;
+}

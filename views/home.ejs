@@ -1,1 +1,48 @@
 <h2>Home</h2>
+
+<h3>Hi <%=currentUser.name%>!</h3>
+
+<div class="listcontainer">
+
+  <%if (taskstoday.length == 0) { %>
+    <div class='title'>Let's start planning for <a href="/dailytasks" class='normallink'>today</a></div>
+  <%} else {%>
+    <div class='title'>Here are your tasks for <a href="/dailytasks" class='normallink'>today</a>: </div>
+    <%taskstoday.forEach(function(task) {%>
+      <div class="taskslist">
+        • <%=task.summary%> (<%=task.type%>) <small><%=moment(task.start).format('H:mm')%>~<%=moment(task.end).format('H:mm')%></small> 
+      </div>
+    <%})%>
+  <%}%>
+</div>
+
+<div class="listcontainer">
+
+  <%if (tasksyesterday.length != 0) { %>
+    <div class='title'>
+      <a href="/dailytasks/date?date=<%=moment().subtract(1, 'day').format('YYYY-MM-DD')%>" class='normallink'>Yesterday</a>, you finished the following tasks: 
+    </div>
+    
+    <%tasksyesterday.forEach(function(task) {%>
+      <div class="taskslist">
+        • <%=task.summary%> (<%=task.type%>) 
+        <%for (let i = 0; i < task.efficiency; i ++){%>
+          ⭐️ 
+        <%}%>
+        <small><%=moment(task.start).format('H:mm')%>~<%=moment(task.end).format('H:mm')%></small><br>
+        <div class="notes">
+          Notes: <br>
+        <%if (task.notes) {%>
+          <%=task.notes%>
+        <%} else {%>
+          &nbsp&nbsp&nbsp&nbsp No notes.
+        <%}%>
+        </div> 
+      </div>
+    <%})%>
+  <%}%>
+</div>
+
+
+
+<link rel="stylesheet" href="/css/home.css">

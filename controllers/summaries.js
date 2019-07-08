@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 
 // GET /summaries/bytime - render a form for submit info for summaries
 router.get('/bytime', function(req, res) {
-  res.render('summaries/bytime')
+  res.redirect(`/summaries/bytime/results?startdate=${moment().startOf('week').format('YYYY-MM-DD')}&enddate=${moment().endOf('week').format('YYYY-MM-DD')}`)
 })
 
 // GET /summaries/bytime/results?startdate=&enddate= show results for 

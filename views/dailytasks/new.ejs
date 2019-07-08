@@ -1,5 +1,6 @@
-<h3>Hi, <%=currentUser.name%>. Let's get on a new task!</h3> <%=moment().format('HH:mm')%>
-
+<div class='title'>Hi, <%=currentUser.name%>. Let's get on a new task! <small>(Current Time: <%=moment().format('HH:mm')%>)</small> &nbsp&nbsp
+  <a href="/dailytasks/date?date=<%=date%>" class='btnlink btn'>Back</a>
+<br><br>
 <form action="/dailytasks" method="POST">
   Summary: <br>
   <input type="text" name='summary' placeholder='Task Summary'><br><br>
@@ -8,16 +9,19 @@
   <input type="text" name='type' placeholder='Task Type'><br><br>
 
   Start: <br>
-  <input type="date" name="startdate" id="" value="<%=moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')%>"><br>
+  <input type="date" name="startdate" id="" value="<%=moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')%>"> &nbsp
   <input type="time" name="starttime" id="" step='60' value="<%=moment().format('HH:mm')%>"><br><br>
 
   End: <br>
-  <input type="date" name="enddate" id="" value="<%=moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')%>"><br>
+  <input type="date" name="enddate" id="" value="<%=moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')%>"> &nbsp
   <input type="time" name="endtime" id="" step='60' value="<%=moment().add(1, 'hour').format('HH:mm')%>"><br><br>
 
   Description: <br>
   <textarea name="description" id="" cols="30" rows="10" placeholder = 'Task Details'></textarea>
+  <br><br>
 
-  <input type="submit" value="CREATE">
+  <input type="submit" value="CREATE" class='btn'>
 
 </form>
+
+<link rel="stylesheet" href="/css/dailytasksNewEdit.css">

@@ -1,12 +1,12 @@
-<h3>Edit: <%=task.summary%> </h3>
+<div class='title'>Edit: <%=task.summary%> &nbsp&nbsp
+  <a href="/dailytasks/date?date=<%=moment(task.start).format('YYYY-MM-DD')%>" class='btnlink btn'>Back</a>
 
-<form action="/dailytasks/<%=task.id%>/?_method=DELETE" method="POST">
-  <input type="text" hidden name='date' value='<%=moment(task.start).format('YYYY-MM-DD')%>'>
-  <input type="submit" value="Delete">
-</form>
+  <form action="/dailytasks/<%=task.id%>/?_method=DELETE" method="POST">
+    <input type="text" hidden name='date' value='<%=moment(task.start).format('YYYY-MM-DD')%>'>
+    <input type="submit" value="Delete">
+  </form>
 
-<a href="/dailytasks/date?date=<%=moment(task.start).format('YYYY-MM-DD')%>">&larr; Back</a>
-
+</div>
 
 <form action="/dailytasks/<%=task.id%>/?_method=PUT" method="POST">
   Summary: <br>
@@ -29,11 +29,11 @@
   </select><br><br>
 
   Start: <br>
-  <input required type="date" name="startdate" id="" value="<%=moment(task.start).format('YYYY-MM-DD')%>"><br>
+  <input required type="date" name="startdate" id="" value="<%=moment(task.start).format('YYYY-MM-DD')%>"> &nbsp
   <input type="time" name="starttime" id="" step='60' value="<%=moment(task.start).format('HH:mm')%>"><br><br>
 
   End: <br>
-  <input required type="date" name="enddate" id="" value="<%=moment(task.end).format('YYYY-MM-DD')%>"><br>
+  <input required type="date" name="enddate" id="" value="<%=moment(task.end).format('YYYY-MM-DD')%>"> &nbsp
   <input type="time" name="endtime" id="" step='60' value="<%=moment(task.end).format('HH:mm')%>"><br><br>
 
   Description: <br>
@@ -45,3 +45,5 @@
   <input type="submit" value="Submit">
 
 </form>
+
+<link rel="stylesheet" href="/css/dailytasksNewEdit.css">

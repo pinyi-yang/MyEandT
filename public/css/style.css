@@ -16,16 +16,20 @@ a {
   text-decoration: none;
 }
 
+.normallink {
+  color: #3366cc;
+  text-decoration: underline;
+}
+
 input {
-  font-size: 1.1vw;
+  font-size: 18px;
   border-radius: 3px;
   padding: 0.2vh 0.2vw;
   border: none;
-  margin-top: 0.2vh;
 }
 
 input[type=date] {
-  width: 7.5vw;
+  width: 130px;
 }
 input[type=date]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -96,6 +100,7 @@ header a:hover {
   border-radius: 0.7vw;
   min-height: 91.5vh;
 }
+
 .tablink {
   padding: 0.2vw 0.3vw;
   font-weight: bold;
@@ -145,7 +150,7 @@ header a:hover {
   margin-top: 0.5vh;
   display: inline-block;
   padding: 0.3vw 0.8vw;
-  font-size: 1vw;
+  font-size: 14px;
   color: white;
   border-radius: 0.9vw;
 }
@@ -198,6 +203,7 @@ main {
   border-radius: 2px;
   justify-content: center;
   background: white;
+  padding: 5px;
 }
 
 .btn:hover {
@@ -230,8 +236,9 @@ main {
               0px 1px 10px 0px rgba(0, 0, 0, .12);
 }
 
-.dateinput {
-
+.btnlink {
+  display: inline-block;
+  padding: 5px;
 }
 
 .tablinkcontainer {

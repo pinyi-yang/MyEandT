@@ -9,6 +9,8 @@ const helmet        = require('helmet');
 const db            = require('./models');
 const moment        = require('moment');
 const override      = require('method-override');
+const sequelize     = require('sequelize');
+const Op            = sequelize.Op;
 
 
 const app = express();
@@ -64,7 +66,37 @@ app.get('/', function(req, res) {
 });
 
 app.get('/home', isLoggedIn, function(req, res) {
-  res.render('home');
+  let today = moment();
+  let yesterday = moment(today).subtract(1, 'day');
+  console.log('📆📆📆', today, );
+  db.dailytask.findAll({
+    where: {
+      userId: req.user.id,
+      [Op.and]: {
+        start: {
+          [Op.gt]: new Date(moment(today).startOf('day')),
+          [Op.lt]: new Date(moment(today).endOf('day'))
+        }
+      }
+    },
+    order: [['start', 'ASC']]
+  }).then(function(taskstoday) {
+    db.dailytask.findAll({
+      where: {
+        userId: req.user.id,
+        [Op.and]: {
+          start: {
+            [Op.gt]: new Date(moment(yesterday).startOf('day')),
+            [Op.lt]: new Date(moment(yesterday).endOf('day'))
+          }
+        }
+      },
+      order: [['start', 'ASC']]
+    }).then(function(tasksyesterday) {
+      // res.send(taskstoday)
+      res.render('home', {taskstoday, tasksyesterday});
+    })
+  })
 })
 
 

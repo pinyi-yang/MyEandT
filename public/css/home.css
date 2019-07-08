@@ -1,0 +1,27 @@
+.listcontainer {
+  border: #6860d7 solid 3px;
+  padding: 1vh 1vw;
+  border-radius: 5px;
+  margin-bottom: 2vh;
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.7vh;
+}
+
+.taskslist {
+  width: 95%;
+  margin: auto;
+  line-height: 1.5em;
+}
+
+.notes {
+  padding: 0.5vh 0.5vw;
+  background: rgba(245, 245, 245, 0.603);
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 1vh;
+  width: 95%; 
+}
+
