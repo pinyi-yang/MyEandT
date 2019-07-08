@@ -58,14 +58,15 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', function(req, res) {
-  if (req.user) {
+  if (req.isAuthenticated()) {
     res.redirect('/home');
   } else {
+    console.log('in the root redirect')
     res.redirect('auth/login');
   }
 });
 
-app.get('/home', isLoggedIn, function(req, res) {
+app.get('/home', function(req, res) {
   let today = moment();
   let yesterday = moment(today).subtract(1, 'day');
   console.log('📆📆📆', today, );
