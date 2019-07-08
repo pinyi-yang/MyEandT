@@ -44,7 +44,15 @@ for (let element of weekdaytasksElArr) {
 tasks.forEach(function(task) {
   let taskEl = document.createElement('div');
   let linkEl = document.createElement('a');
-  taskEl.textContent = task.summary + ' ' +`(${task.type})`;
+  if (typeof selectId != 'undefined' && task.id == selectId) {
+      console.log('select taskid' + selectId + ' is ', task.id);
+      taskEl.id = 'selectTask';
+      let contentEl = document.createElement('div');
+      contentEl.textContent = task.summary + ' ' +`(${task.type})`
+      taskEl.appendChild(contentEl);
+  } else {
+    taskEl.textContent = task.summary + ' ' +`(${task.type})`;
+  }
   linkEl.classList.add('daytask');
   linkEl.href = '/dailytasks/' + task.id;
   taskEl.classList.add(task.type);

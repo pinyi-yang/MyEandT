@@ -109,6 +109,14 @@ h3 {
   min-height: 8vh;
   padding: 0.3vw;
   border-radius: 5px;
+  margin: auto 2px;
+}
+
+#selectTask {
+  opacity: 0.8;
+  padding: 0;
+  border: rgb(150, 150, 150) solid 3px;
+  box-sizing: border-box;
 }
 
 .btnlink {
