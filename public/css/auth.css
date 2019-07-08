@@ -1,6 +1,8 @@
 body { 
   position: relative;
-  background: #f7d73a;
+  background: url('/img/background3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -15,13 +17,13 @@ h4 {
 #appinfo {
   position: absolute;
   width: 35vw;
-  min-height: 56vh;
-  left: 8vw;
-  top: 18vh;
+  min-height: 36vh;
+  left: 10vw;
+  top: 16vh;
   /* border: #2d2d2d solid 0.4vw; */
   padding: 0 0.8vw 0.4vw 1vw;
   border-radius: 1vw;
-  /* background: rgba(0, 0, 0, 0.705); */
+  background: rgba(240, 240, 240, 0.61);
   /* color: white; */
 }
 
@@ -32,8 +34,8 @@ h4 {
 }
 .authdiv {
   position: absolute;
-  width: 30vw;
-  height: 40vw;
+  min-width: 30vw;
+  min-height: 40vw;
   right: 10vw;
   top: 12vh;
   /* border: black solid 2px; */
@@ -45,45 +47,46 @@ h4 {
   text-decoration: none;
   color: black;
   font-weight: bolder;
-  font-size: 1.5vw
+  font-size: 24px;
 }
 
 .authlinks {
   display: flex;
   justify-content: center;
   border-radius: 10px 10px 0 0;
-  border-bottom: rgba(230, 230, 230, 0.658) solid 3px;
+  /* border-bottom: rgba(230, 230, 230, 0.658) solid 3px; */
 }
 
 .authlinks div {
-  width: 14.9vw;
+  min-width: 15vw;
   text-align: center;
   padding:1vw 0;
 }
-.authlinks a:first-child div {
+/* .authlinks a:first-child div {
   border-right: rgba(230, 230, 230, 0.658) solid 3px;
-}
+} */
 
 form {
-  margin-top: 3.4vw;
+  margin-top: 50px;
 }
 
+input {
+  margin-top: 5px;
+}
 .form-group {
   padding: 0.8vw 0;
 }
 
 label {
-  font-size: 1.2vw;
+  font-size: 20px;
   font-weight: 1000;
-  line-height: 1.8vw;
+  line-height: 24px;
 }
 
 #button {
   /* border: black solid 2px; */
-  margin-top: 1.8vw;
+  margin-top: 50px;
+  position: absolute;
+  right: 5%;
 }
 
-#button div {
-  display: inline-block;
-  width: 70%;
-}
