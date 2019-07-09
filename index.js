@@ -105,12 +105,12 @@ app.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile');
 });
 
-app.get('/test', function(req, res){
-  db.user.findByPk(1).then(function(user) {
-    res.send(user);
+// app.get('/test', function(req, res){
+//   db.user.findByPk(1).then(function(user) {
+//     res.send(user);
 
-  })
-});
+//   })
+// });
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/dailyTasks', isLoggedIn, require('./controllers/dailyTasks.js'));

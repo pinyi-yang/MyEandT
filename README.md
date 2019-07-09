@@ -13,20 +13,22 @@ My E&T aims to provide a convenient way to track users' daily acitivity and add 
 
 According to the results, users could modify their schedule, habit and method to have better outcome form their effort and time so that speed up on their rail to the goal while having more time to enjoy the life.
 
-### Features
-planners for different time span (5 years, 1 year, 1 month, 1 week)
+## Design
+planners for different time span (10 years, 1 year, 1 month, 1 week)
 * top-down planning function, auto sync
-* interruption, efficience and challenges tracker
+* interruptions, efficience and challenges tracker
 * statistic pages by projects, time, and ...
+
+
 
 ## Development
 1. use the same data set for all the ejs in views.
 2. 
 
 ### Planning
-* Initial Work (day 1)
-  * framework (~2 hours) 
-  * google calendar API and data structure (ERD) (day 1, ~4 hours)
+* Initial Work (1~2 days)
+  * framework 
+  * google calendar API and data structure (ERD)
 
 * Basic function development I (day 2)
   * basic framework for 5 years, year, month, week tasks ( ~4 hours)
