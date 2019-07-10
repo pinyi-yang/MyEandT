@@ -15,7 +15,8 @@ According to the results, users could modify their schedule, habit and method to
 
 ## Design & Planning
 Besides login/signup pages, 5 pages (10 years, 1 year, 1 month, 1 week, summary) are designed.
-![login/signup](./ReadmeFiles/Login.png) 
+![login/signup](./ReadmeFiles/Login.png)
+![login/signup](./ReadmeFiles/10years.png)![login/signup](./ReadmeFiles/year.png)   
 
 
 planners for different time span (10 years, 1 year, 1 month, 1 week)
