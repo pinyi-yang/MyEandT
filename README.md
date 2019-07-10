@@ -13,8 +13,9 @@ My E&T aims to provide a convenient way to track users' daily acitivity and add 
 
 According to the results, users could modify their schedule, habit and method to have better outcome form their effort and time so that speed up on their rail to the goal while having more time to enjoy the life.
 
-## Design
-
+## Design & Planning
+Besides login/signup pages, 5 pages (10 years, 1 year, 1 month, 1 week, summary) are designed.
+![login/signup](./ReadmeFiles/Login.png) 
 
 
 planners for different time span (10 years, 1 year, 1 month, 1 week)
