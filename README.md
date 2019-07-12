@@ -22,10 +22,21 @@ Login page | task eidt page
 
 10 years planner | 1 year planner
 --- | ---
-![10 years](./ReadmeFiles/10years.png) | ![1 year](./ReadmeFiles/year.png)   
+![10 years](./ReadmeFiles/10years.png) | ![1 year](./ReadmeFiles/year.png)
 
+month planner | week, daily tracker planner
+--- | ---
+![month](./ReadmeFiles/month.png) | ![week, tracker](./ReadmeFiles/week+daily_tracker.png)
+   
+summary | 
+--- | ---
+![summaries](./ReadmeFiles/summaries.png) |
 
-planners for different time span (10 years, 1 year, 1 month, 1 week)
+### Features
+**General Features**
+* Authentication functions (login and signup) (alpha version)
+* Daily
+  * create main and sub events at the corresponding time range
 * top-down planning function, auto sync
 * interruptions, efficience and challenges tracker
 * statistic pages by projects, time, and ...

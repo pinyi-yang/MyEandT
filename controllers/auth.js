@@ -46,6 +46,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: 'Invalide username and/or password.'
   }), function(req, res) {
     req.session.save(function(err) {
+      req.flash('You are logged in');
       res.redirect('/home');
     })
   }
@@ -57,7 +58,6 @@ router.get('/logout', function(req, res) {
   console.log('log out');
   req.flash('success', 'You have a logged out.')
   req.session.destroy(function(err) {
-
     res.redirect('/');
   })
 })
