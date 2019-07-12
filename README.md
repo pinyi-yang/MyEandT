@@ -32,14 +32,31 @@ summary |
 --- | ---
 ![summaries](./ReadmeFiles/summaries.png) |
 
+Current entity relationship diagram (ERD)
+
+![ERD](./ReadmeFiles/ERD2.png)
+
 ### Features
-**General Features**
-* Authentication functions (login and signup) (alpha version)
-* Daily
-  * create main and sub events at the corresponding time range
-* top-down planning function, auto sync
-* interruptions, efficience and challenges tracker
-* statistic pages by projects, time, and ...
+**Alpha version Features**
+* Authentication functions (login and signup)
+* Weekly planner + Daily task tracker
+  * show tasks for the whole week and tasks vs time at selected date
+  * create daily task
+  * got to a date by click weekday or select date
+  * show task tracker by click task in either week tasks panel and day tasks panel
+  * in task tracker:
+    * record task effieciency
+    * add and remove drag and boost events in the task
+    * add notes for tasks
+* Summaries page - statistic for tasks
+  * time ratio and hours on different type of tasks
+  * average efficiency, boosts and drags during different hours of day
+
+**Coming Features**
+* Beta version
+  * adding and optimize interactive component with React.js
+  *  
+
 
 
 
