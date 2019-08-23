@@ -135,22 +135,22 @@ header a:hover {
   font-size: 14px;
 }
 
-.interview, .api {
+.api {
   background: #c0ca33;
 }
-.job, .server {
+.server {
   background: #f09200; 
 }
-.project, .frontend {
+.frontend {
   background: #329ae4;
 }
-.network, .baby {
+.baby {
   background: #ea9189
 }
-.study, .design {
+.design {
   background: #7885cb;
 }
-.event, .database  {
+.database {
   background: #795548; 
 }
 
