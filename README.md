@@ -36,13 +36,13 @@ Login page | task eidt page
 |:---:|:---:|
 ![10 years](./ReadmeFiles/10years.png) | ![1 year](./ReadmeFiles/year.png)
 
-month planner | week, daily tracker planner
+| month planner | week, daily tracker planner
 |:---:|:---:|
 ![month](./ReadmeFiles/month.png) | ![week, tracker](./ReadmeFiles/week+daily_tracker.png)
    
-summary | 
+| summary | 
 |:---:|:---:|
-![summaries](./ReadmeFiles/summaries.png) |
+![summaries](./ReadmeFiles/summaries.png) | |
 
 
 After self and peer review on design, for the 1-week aphla version develpment, ERD and included features are as following. The ERD is not optimized yet. The project and subproject can possibly merged with dailytasks in to a tasks table. For alpha version focusing on week+daily tracker and summaries feathers, the ERD optimization is planned in beta version.
