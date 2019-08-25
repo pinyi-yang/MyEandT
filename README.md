@@ -4,7 +4,8 @@ My E&T (My Effort and Time, [Live App](https://mysterious-ocean-78106.herokuapp.
 **Tech:** Javascript, Node/Express, ejs, SQL/Postgres/Sequeize, Google API (OAuth), HTML, CSS.
 
 **App Preivew**
-| Login| Task Tracker
+
+| Login| Task Tracker |
 |:---:|:---:|
 |![Login](./ReadmeFiles/Login.gif) | ![Task Tracker](./ReadmeFiles/task_tracker.gif) |
 
