@@ -134,6 +134,7 @@ module.exports = function(req, res, next) {
 ```
 
 **Restful Routes for Dailytasks**
+
 | Routes | Methods | Notes |
 |:------:|:-------:|:-----:|
 | /dailyTasks | POST | add a new task to user |
