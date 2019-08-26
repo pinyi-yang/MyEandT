@@ -3,7 +3,8 @@ My E&T (My Effort and Time, [Live App](https://mysterious-ocean-78106.herokuapp.
 
 ### Table of Content
 * [Introduction](#Introduction)
-* [Design & Planning](#Design_&_Planning)
+* [Design](#Design)
+* [Developmnet](#Development)
 * [Conclusion](#Conclusion)
 
 **Tech:** Javascript, Node/Express, ejs, SQL/Postgres/Sequeize, Google API (OAuth), HTML, CSS.
@@ -38,7 +39,7 @@ My E&T aims to provide a convenient way to track users' daily acitivity and add 
 
 According to the results, users could modify their schedule, habit and method to have better outcome form their effort and time so that speed up on their rail to the goal while having more time to enjoy the life.
 
-## Design_&_Planning
+## Design
 Besides login/signup pages, full app will include 5 pages (10 years, 1 year, 1 month, 1 week, summary).
 
 Login page | task eidt page
@@ -74,44 +75,19 @@ Current entity relationship diagram (ERD)
   * average efficiency, boosts and drags during different hours of day
 
 **Coming Features**
-* Beta version (expcted Sep. 2019)
+* Beta version (expcted Nov. 2019)
   * optimize ERD.
   * add daily and week habit tracker
   * 1 month, 1 year, 10 years planning page 
   * adding and optimize interactive component with React.js
 
-* Version 1.0 (expected Nov. 2019)
+* Version 1.0 (expected Feb. 2020)
     * summaries by type, drag and boost summaries function
     * add dragging effect to dailytasks div
     * link and sync with google calendar
     * more customize options for calendar
 
 * Mobile version (planned 2020)
-
-### Planning
-* Basic backend and frontend Setup (day 1 - 2):
-    * create routes (CRUD) and ejs for users and dailystasks
-    * setup database in postgres with Sequelize
-    * testing creating and updating users and tasks in routes
-    * basic layout (css) 
-
-* Date and time handling, and Google Chart API (day 2)
-    * study how to handle time (difference, format...) with moment and Sequelize
-    * add date selector on page
-    * study how to generate chart with Google Chart API
-
-* Backend and frontend setup for task tracker (efficiency, boost, drag and notes) (day 3)
-    * database, routes and ejs setup
-    * basic layout (css)
-    * interactive function
-
-* Generate chart in summaries page with Google Chart API (day 4)
-
-* User interface modification (css) (day 5)
-
-* Flexible schedule (day 6-7)
-    * flex time for delayed work or debug
-    * more modification on interface
 
 ## Development
 overview on frame work and features
