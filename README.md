@@ -1,7 +1,20 @@
 # MyE&T
 My E&T (My Effort and Time, [Live App](https://mysterious-ocean-78106.herokuapp.com/auth/login)) is designed to be an application integrated with personal planner, project tracker and effort and time summarizer. It will help users planning and tracking their short-term and long-term projects and goals, while tracking the outcome of users time usage and effort to provide statistic insides. The insides could further help users optmize their time and effort and boost performance.
 
+### Table of Content
+* [Introduction](#Introduction)
+* [Design & Planning](#Design_&_Planning)
+* [Conclusion](#Conclusion)
+
 **Tech:** Javascript, Node/Express, ejs, SQL/Postgres/Sequeize, Google API (OAuth), HTML, CSS.
+
+**Release Notes**
+
+* Alpha version: (this repo), released July., 2019.
+* Beta version : scheduled Nov., 2019.
+* Verision 1.0: scheduled Feb., 2020.
+* Mobile version: scheduled late 2020.
+For features in each version please check [Features](#Features) section.
 
 **App Preivew**
 
@@ -25,24 +38,16 @@ My E&T aims to provide a convenient way to track users' daily acitivity and add 
 
 According to the results, users could modify their schedule, habit and method to have better outcome form their effort and time so that speed up on their rail to the goal while having more time to enjoy the life.
 
-## Design & Planning
+## Design_&_Planning
 Besides login/signup pages, full app will include 5 pages (10 years, 1 year, 1 month, 1 week, summary).
 
 Login page | task eidt page
 |:---:|:---:|
 ![login/signup](./ReadmeFiles/Login.png) | ![task edit](./ReadmeFiles/edit.png)
-
-10 years planner | 1 year planner
-|:---:|:---:|
-![10 years](./ReadmeFiles/10years.png) | ![1 year](./ReadmeFiles/year.png)
-
-| month planner | week, daily tracker planner
-|:---:|:---:|
-![month](./ReadmeFiles/month.png) | ![week, tracker](./ReadmeFiles/week+daily_tracker.png)
    
-| summary | 
+| week, daily tracker planner | summary | 
 |:---:|:---:|
-![summaries](./ReadmeFiles/summaries.png) | |
+| ![week, tracker](./ReadmeFiles/week+daily_tracker.png) | ![summaries](./ReadmeFiles/summaries.png) |
 
 
 After self and peer review on design, for the 1-week aphla version develpment, ERD and included features are as following. The ERD is not optimized yet. The project and subproject can possibly merged with dailytasks in to a tasks table. For alpha version focusing on week+daily tracker and summaries feathers, the ERD optimization is planned in beta version.
