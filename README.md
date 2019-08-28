@@ -141,33 +141,126 @@ module.exports = function(req, res, next) {
 | /dailyTasks/:taskId | GET | get a task and all tasks at the same week for user |
 | /dailyTasks/:taskId | PUT | update the task for user |
 | /dailyTasks/:taskId | DELETE | remove the task from user |
+| /drags | POST | add a drag to a task |
+| /boosts | POST | add a boost to a task |
 
 **Other Routes for Dailytasks**
-In order to imporve data flexibility.
-
+Due to the limitation of ejs. in order to implement some design, forms could not be used. As results some non RESTful routes are used. This will be modify in Beta version.
+| Routes | Methods | Notes |
+|:------:|:-------:|:-----:|
+| /dailyTasks/:taskId/addnotes | GET | add task tracker notes to  a project |
+| /dailyTasks/:taskId/efficiency | GET | change efficiency rank of a task |
+| /drags/remove | GET | remove a drag tag from a task |
+| /boosts/remove | GET | remove a boost tag from a task |
 
 ### Frontend
-ejs, javscript generated page, google chart API
+
+For frontend:
+* Weekly Tasks and daily tasks view are generated with Javascripts
+* Charts are generated with google chart API
+* Others: expresss-ejs
 
 **Weekly Tasks View**
-add tasks to right day with right order
+
+![weekTasks](./ReadmeFiles/weekTasks.png)
+To create a weekly, weekTasks from server were sorted in to array by their weekdays. Then the arrange is used to create the divs for page.
+```javascript
+var weekTasks // task data from backend
+//* DOM elements =======================================
+var weektasksEl = document.getElementById('weektasks'); //container for week tasks
+var weekdaytasksElArr = []; //elements array for task on each day
+
+//* create week tasks div========================================
+// ** create div for each day
+for (let i=0; i <=6; i++) {
+  weekdaytasksElArr[i] =document.createElement('div');
+  let link = document.createElement('a');
+  let temp = moment(weekStart);
+  link.classList.add('tablink');
+  link.href = "/dailytasks/date?date=" + temp.add(i, 'day').format('YYYY-MM-DD');
+  console.log(weekStart.format('YYYY-MM-DD'));
+  link.textContent = moment(i, 'd').format('ddd').toUpperCase();
+  weekdaytasksElArr[i].appendChild(link);
+  if (i == currentDate.format('d')) weekdaytasksElArr[i].id = 'currentdate';
+}
+
+// ** append all tasks on corresponding day
+weekTasks.forEach(function(task) {
+  let taskEl = document.createElement('a');
+  taskEl.href = '/dailytasks/' + task.id;
+  taskEl.textContent = "• " + task.summary;
+  taskEl.classList.add(task.type);
+  taskEl.classList.add('tabtask')
+  weekdaytasksElArr[moment(task.start).format('d')].appendChild(taskEl);
+})
+
+// ** add element into page
+for (let element of weekdaytasksElArr) {
+  weektasksEl.appendChild(element);
+}
+
+```
 
 **Daily Tasks View**
-*Task Positioning*
-position the task in the daily view at right time and with right length
 
-*Task Tracking Features*
-add efficiency, drag, boost and notes
+![dayTasks](./ReadmeFiles/dayTasks.png)
+To create a day tasks view, width and postion of task div must be controlled depending on the start and end time of tasks. Absolute position, and percentage left and width was used for each task div. The value was calculated:
+```javascript
+var tasks //tasks for the selected date from server
+//* DOM elements =======================================
+var dayTasksListEl = document.getElementById('daytaskslist');
 
-**Generate Statistics**
-OAuth
-how to transform data to get statistic by google chart API
+//* create day tasks div========================================
+tasks.forEach(function(task) {
+  let taskEl = document.createElement('div');
+  let linkEl = document.createElement('a');
+  if (typeof selectId != 'undefined' && task.id == selectId) {
+      console.log('select taskid' + selectId + ' is ', task.id);
+      taskEl.id = 'selectTask';
+      let contentEl = document.createElement('div');
+      contentEl.textContent = task.summary + ' ' +`(${task.type})`
+      taskEl.appendChild(contentEl);
+  } else {
+    taskEl.textContent = task.summary + ' ' +`(${task.type})`;
+  }
+  linkEl.classList.add('daytask');
+  linkEl.href = '/dailytasks/' + task.id;
+  taskEl.classList.add(task.type);
+  linkEl.appendChild(taskEl);
+  
+  //** position the div
+  let start = moment(task.start);
+  let end = moment(task.end);
+  let startpos = moment(start.format('H:mm'), 'H:mm').diff(moment('7:30', 'H:mm;'), 'minutes');
+  let width = moment(end).diff(start, 'minutes');
+  // console.log(start.format('H:mm') + "'s start pos is " + startpos);
+  // length for 10 hour (600) is 100%, 1 minute = 1/6% width on screen 
+  startpos = startpos/6 + '%';
+  width = width/6 + '%';
+  // console.log(startpos, width);
+
+  linkEl.style.left = startpos;
+  linkEl.style.width = width;
+
+  dayTasksListEl.appendChild(linkEl);
+})
+
+```
 
 ## Conclusion
-improvement
+
+For the alpha version, this app presented the core concept of MyE&T:
+* task tracker for user's tasks with efficiency, drags and boost record.
+* provide statics for user's effort and time for better planning and working in future.
+
+However, there are still missing features as mention in features section. Due to the limitation of ejs, some of user interaction is still not satisfactory:
+* page refreshing for almost every mouse activity (add drags, boost, change efficiency,....)
+* hard to modify task time
+These issues will be tracked in beta version with React.
 
 
 ## References
+* Google Chart API: for chart generation ([link](https://developers.google.com/chart/))
 * W3School: for CSS, HTML and Javascript documents. ([link](https://www.w3schools.com/))
 * Stack Overflow: for quesionts and errors. ([link](https://stackoverflow.com/))
 
