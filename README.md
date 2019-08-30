@@ -14,6 +14,7 @@ My E&T (My Effort and Time, [Live App](https://mysterious-ocean-78106.herokuapp.
 * Beta version : scheduled Nov., 2019.
 * Verision 1.0: scheduled Feb., 2020.
 * Mobile version: scheduled late 2020.
+
 For features in each version please check [Features](#Features) section.
 
 **App Preivew**
