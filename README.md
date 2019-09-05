@@ -1,5 +1,5 @@
 # MyE&T
-My E&T (My Effort and Time, [Live App](https://mysterious-ocean-78106.herokuapp.com/auth/login)) is designed to be an application integrated with personal planner, project tracker and effort and time summarizer. It will help users planning and tracking their short-term and long-term projects and goals, while tracking the outcome of users time usage and effort to provide statistic insides. The insides could further help users optmize their time and effort and boost performance.
+My E&T (My Effort and Time, [Live App](https://my-e-and-t.herokuapp.com/)) is designed to be an application integrated with personal planner, project tracker and effort and time summarizer. It will help users planning and tracking their short-term and long-term projects and goals, while tracking the outcome of users time usage and effort to provide statistic insides. The insides could further help users optmize their time and effort and boost performance.
 
 ### Table of Content
 * [Design](#Design)
@@ -261,9 +261,9 @@ These issues will be tracked in beta version with React.
 
 
 ## References
-* Google Chart API: for chart generation ([link](https://developers.google.com/chart/))
-* W3School: for CSS, HTML and Javascript documents. ([link](https://www.w3schools.com/))
-* Stack Overflow: for quesionts and errors. ([link](https://stackoverflow.com/))
+* **[Google Chart API](https://developers.google.com/chart/)**: for chart generation.
+* **[Stack Overflow](https://stackoverflow.com/)**: for quesionts and errors.
+* **[W3School](https://www.w3schools.com/)**: for CSS, HTML and Javascript documents.
 
 
 
