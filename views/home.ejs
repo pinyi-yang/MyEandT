@@ -10,7 +10,7 @@
     <div class='title'>Here are your tasks for <a href="/dailytasks" class='normallink'>today</a>: </div>
     <%taskstoday.forEach(function(task) {%>
       <div class="taskslist">
-        • <%=task.summary%> (<%=task.type%>) <small><%=moment(task.start).format('H:mm')%>~<%=moment(task.end).format('H:mm')%></small> 
+        • <a href="/dailytasks/<%=task.id%>/edit"><%=task.summary%></a> (<%=task.type%>) <small><%=moment(task.start).format('H:mm')%>~<%=moment(task.end).format('H:mm')%></small> 
       </div>
     <%})%>
   <%}%>
@@ -25,7 +25,7 @@
     
     <%tasksyesterday.forEach(function(task) {%>
       <div class="taskslist">
-        • <%=task.summary%> (<%=task.type%>) 
+        • <a href="/dailytasks/<%=task.id%>/edit"><%=task.summary%></a> (<%=task.type%>) 
         <%for (let i = 0; i < task.efficiency; i ++){%>
           ⭐️ 
         <%}%>
