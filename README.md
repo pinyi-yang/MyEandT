@@ -11,7 +11,7 @@ My E&T (My Effort and Time, [Live App](https://my-e-and-t.herokuapp.com/)) is de
 **Release Notes**
 
 * Alpha version: (this repo), released July., 2019.
-* Beta version : scheduled Nov., 2019.
+* Beta version [github](https://github.com/shadownova65/MyEandT_beta) : scheduled Nov., 2019.
 * Verision 1.0: scheduled Feb., 2020.
 * Mobile version: scheduled late 2020.
 
